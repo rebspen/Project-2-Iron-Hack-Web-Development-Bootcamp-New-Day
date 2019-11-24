@@ -3,15 +3,25 @@
 const { join } = require('path');
 const express = require('express');
 const createError = require('http-errors');
+const hbs = require('hbs');
 const cookieParser = require('cookie-parser');
+const mongoose = require('mongoose');
 const logger = require('morgan');
 const sassMiddleware = require('node-sass-middleware');
 const serveFavicon = require('serve-favicon');
+const expressSession = require('express-session');
+const connectMongo = require('connect-mongo');
+const MongoStore = connectMongo(expressSession);
 
-const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/user');
+const authRouter = require('./routes/auth');
+const postRouter = require('./routes/post');
+const profileRouter = require('./routes/profile');
+
+const User = require('./models/user');
 
 const app = express();
+
+hbs.registerPartials(path.join(__dirname, 'views/partials'));
 
 app.set('views', join(__dirname, 'views'));
 app.set('view engine', 'hbs');
@@ -28,8 +38,9 @@ app.use(sassMiddleware({
 }));
 app.use(express.static(join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/user', usersRouter);
+app.use('/', authRouter);
+app.use('/post', postRouter);
+app.use('/profile', profileRouter);
 
 // Catch missing routes and forward to error handler
 app.use((req, res, next) => {
