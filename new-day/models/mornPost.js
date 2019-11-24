@@ -18,11 +18,17 @@ const schema = new mongoose.Schema({
     type: mongoose.Types.ObjectId,
     required: true,
     ref: 'User'
-  }
+  }, 
+  today: [{
+    body1: String,
+    body2: String,
+    body3: String
+  }],
+  better: String,
 },
 {
   timestamps: true
 }
 );
 
-module.exports = mongoose.model('MornPost', schema);
+module.exports = mongoose.model('Post', schema);
