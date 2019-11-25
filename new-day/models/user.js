@@ -21,6 +21,8 @@ const schema = new mongoose.Schema({
     required: true,
     trim: true
   },
+  imgName: String,
+  imgPath: String,
   theme :{
     type: String,
     enum : ["Forest", "Ocean", "Space", "Pattern", "Beach"]
