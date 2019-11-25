@@ -1,5 +1,5 @@
 <h1>Sign Up With Email</h1>  
-<form action="/auth/sign-up" method="POST">
+<form action="/auth/sign-up" method="POST" enctype="multipart/form-data">
   <label for="input-name">Name</label>
 
   <input type="text" id="input-name" name="name" placeholder="Your Name" />
@@ -17,12 +17,14 @@
 
   <label for="theme">Theme</label>
   <select name="theme" id="input-theme" placeholder="Choose theme">
-  <option value="Forest">Volvo</option>
-  <option value="Ocean">Saab</option>
-  <option value="Space">Mercedes</option>
-  <option value="Pattern">Audi</option>
-  <option value="Beach">Audi</option>
+  <option value="None">None</option>
+  <option value="Forest">Forest</option>
+  <option value="Ocean">Ocean</option>
+  <option value="Space">Space</option>
+  <option value="Pattern">Pattern</option>
+  <option value="Beach">Beach
+  </option>
    </select>
-   
+
   <button class="btn">Sign Up</button>
 </form>

@@ -6,7 +6,7 @@ const router = new Router();
 const Post = require('./../models/post');
 const User = require('./../models/user');
 
-router.get('/:userId', (req, res, next) => {
+router.get('/profile/:userId', (req, res, next) => {
   const userId = req.params.userId;
   let user;
   User.findById(userId)

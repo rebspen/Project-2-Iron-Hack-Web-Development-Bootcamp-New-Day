@@ -21,6 +21,7 @@ const schema = new mongoose.Schema({
     required: true,
     trim: true
   },
+  
   imgName: String,
   imgPath: String,
   theme :{

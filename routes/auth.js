@@ -8,7 +8,7 @@ const nodemailer = require('nodemailer');
 const { Router } = require('express');
 const express = require('express');
 const router = new Router();
-const uploadCloud = require('../middleware/upload.js');
+const uploader = require('../middleware/upload.js');
 
 router.get('/', (req, res, next) => {
   res.render('index');
@@ -36,7 +36,7 @@ const transporter = nodemailer.createTransport({
   }
 });
 
-router.post('/sign-up', uploadCloud.single('profile'), (req, res, next) => {
+router.post('/auth/sign-up', uploader.single('profile'), (req, res, next) => {
   const { name, email, password, location, theme} = req.body;
   const imgName = req.file.url;
   const imgPath = req.file.originalname;
@@ -92,26 +92,17 @@ router.post('/sign-up', uploadCloud.single('profile'), (req, res, next) => {
       // send to the error handler
       next(error);
     });
-<<<<<<< HEAD
-}); 
-
-router.get('/confirm/:code', (req, res, next) => {
-  const code = req.params.code;
-  User.findOneAndUpdate({confirmationCode : code}, {status: "Active"})
-  .then (user => { 
-  res.render('/', {user});
-  })
-  .catch(error => {
-    next(error); 
-=======
->>>>>>> 4ba9e6979f32046241b05c14d8ed3c37dae8a733
   });
   
   router.get('/confirm/:code', (req, res, next) => {
     const code = req.params.code;
     User.findOneAndUpdate({confirmationCode : code}, {status: "Active"})
     .then (user => { 
-      res.render('/', {user});
+      User.find({confirmationcode: code});
+      // req.session.user = user._id;
+      console.log("LOOK HERE FOR USER:" + user._id); 
+  
+      res.redirct(user, 'profile/user._id');
     })
     .catch(error => {
       next(error); 
