@@ -6,7 +6,9 @@ const router = new Router();
 const Post = require('./../models/post');
 const User = require('./../models/user');
 
-router.get('/:userId', (req, res, next) => {
+const routeGuard = require('./../middleware/route-guard');
+
+router.get('/:userId', routeGuard, (req, res, next) => {
   const userId = req.params.userId;
   User.findById(userId)
     .then(user => {

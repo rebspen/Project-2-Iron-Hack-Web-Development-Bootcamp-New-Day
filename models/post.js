@@ -3,28 +3,16 @@
 const mongoose = require('mongoose');
 
 const schema = new mongoose.Schema({
-  gartitude: [{
-    body1: String,
-    body2: String,
-    body3: String
-  }],
-  great: [{
-    body1: String,
-    body2: String,
-    body3: String
-  }],
+  gratitude: String,
+  great: String,
   affirmation : String,
   author: {
     type: mongoose.Types.ObjectId,
     required: true,
     ref: 'User'
   }, 
-  today: [{
-    body1: String,
-    body2: String,
-    body3: String
-  }],
-  better: String,
+  today: String,
+  better: String
 },
 {
   timestamps: true

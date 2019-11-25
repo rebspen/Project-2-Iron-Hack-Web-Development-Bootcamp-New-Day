@@ -98,9 +98,7 @@ router.post('/auth/sign-up', uploader.single('profile'), (req, res, next) => {
     const code = req.params.code;
     User.findOneAndUpdate({confirmationCode : code}, {status: "Active"})
     .then (user => { 
-      User.find({confirmationcode: code});
-      req.session.user = user._id;
-      console.log("LOOK HERE FOR USER:" + user + user._id); 
+      req.session.user = user._id; 
       res.redirect(`/${user._id}`);
     })
     .catch(error => {
