@@ -2,7 +2,7 @@
 
 
 const User = require('./../models/user');
-const bcryptjs = require('bcryptjs')
+const bcryptjs = require('bcryptjs');
 const nodemailer = require('nodemailer');
 
 const { Router } = require('express');
@@ -48,7 +48,7 @@ router.post('/sign-up', uploadCloud.single('profile'), (req, res, next) => {
       token += characters[Math.floor(Math.random() * characters.length)];
   };
   generateId(12)
-  }
+  
   bcryptjs
     .hash(password, 10)
     .then(hash => {
@@ -94,16 +94,15 @@ router.post('/sign-up', uploadCloud.single('profile'), (req, res, next) => {
     });
 });
 
-
 router.get('/confirm/:code', (req, res, next) => {
   const code = req.params.code;
-  User.findOneAndUpdate({confirmationCode : code} {status: "Active"})
-  then.(user => { 
-  res.render('profile', {user});
+  User.findOneAndUpdate({confirmationCode : code}, {status: "Active"})
+  .then (user => { 
+  res.render('/', {user});
   })
-  .catch{error => {
+  .catch(error => {
     next(error); 
-  }}
+  });
 });
 
 module.exports = router;
