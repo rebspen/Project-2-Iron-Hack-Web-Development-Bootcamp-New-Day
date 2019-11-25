@@ -26,7 +26,8 @@ const schema = new mongoose.Schema({
   theme :{
     type: String,
     enum : ["Forest", "Ocean", "Space", "Pattern", "Beach"]
-  }
+  },
+  confirmationCode : String
 },
 {
   timestamps: true
