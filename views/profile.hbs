@@ -1,11 +1,13 @@
-<h1>Welcome to your profile page, {{user.name}}</h1> 
-<img src= {{user.imgName}} >
-<br>
+<div class="profile-container">
+  <h1>Hey, {{user.name}}</h1> 
 
-{{#each posts}}
-  <a href="/post/{{ this._id }}">view post</a>
-    {{> singlepost}}
+  <img class="profileImg" src= {{user.imgName}}>
   
-{{/each}}
 
-<button type="button" class="btn btn-outline-primary btn-block"><a href = "post/create">Create a Post</a></button>
+  {{#each posts}}
+      {{> singlepost}}
+  {{/each}}
+
+  <button type="button" class="btn btn-outline-primary btn-block"><a href = "post/create">Write Journal</a></button>
+</div>
+

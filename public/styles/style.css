@@ -6,4 +6,24 @@ body {
 a {
   color: #00b7ff; }
 
+.single-post {
+  display: flex;
+  justify-content: center; }
+
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #91cdd6; }
+
+h1 {
+  display: flex;
+  justify-content: center; }
+
+.profileImg {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 10rem; }
+
 /*# sourceMappingURL=style.css.map */

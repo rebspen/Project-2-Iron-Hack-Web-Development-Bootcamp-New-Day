@@ -49,7 +49,7 @@ router.post('/auth/sign-in', (req, res, next) => {
       if (result) {
         // If they match, the user has successfully been signed up
         req.session.user = userId;
-        res.redirect('/profile');
+        res.redirect('/userId');
       } else {
         // If they don't match, reject with an error message
         return Promise.reject(new Error('Wrong password. Please try again.'));
