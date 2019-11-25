@@ -25,7 +25,13 @@ const schema = new mongoose.Schema({
   imgPath: String,
   theme :{
     type: String,
-    enum : ["Forest", "Ocean", "Space", "Pattern", "Beach"]
+    enum : ["Forest", "Ocean", "Space", "Pattern", "Beach", "None"], 
+    default: "None" 
+  }, 
+  status: {
+    type: String,
+    enum: ["Active", "Pending"],
+    default: "Pending"
   }
 },
 {

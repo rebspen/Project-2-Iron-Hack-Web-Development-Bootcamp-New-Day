@@ -11,7 +11,7 @@ cloudinary.config({
 
 const storage = storageCloudinary({
   cloudinary,
-  folder: '174-squeaker',
+  folder: 'new-day',
   allowedFormats: ['jpg', 'png']
 });
 

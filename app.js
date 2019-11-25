@@ -38,6 +38,42 @@ app.use(sassMiddleware({
 }));
 app.use(express.static(join(__dirname, 'public')));
 
+app.use(cookieParser()); 
+
+app.use(
+  expressSession({
+    secret: process.env.SESSION_SECRET,
+    resave: true,
+    saveUninitialized: false,
+    cookie: {
+      maxAge: 60 * 60 * 24 * 15,
+      sameSite: true,
+      httpOnly: true,
+      secure: process.env.NODE_ENV !== 'development'
+    },
+    store: new MongoStore({
+      mongooseConnection: mongoose.connection,
+      ttl: 60 * 60 * 24
+    })
+  })
+);
+app.use((req, res, next) => {
+  const userId = req.session.user;
+  if (userId) {
+    User.findById(userId)
+      .then(user => {
+        req.user = user;
+        res.locals.user = req.user;
+        next();
+      })
+      .catch(error => {
+        next(error);
+      });
+  } else {
+    next();
+  }
+});
+
 app.use('/', authRouter);
 app.use('/post', postRouter);
 app.use('/profile', profileRouter);
