@@ -18,7 +18,6 @@ router.get('/profile', (req, res, next) => {
   res.render('profile');
 });
 
-
 //Sign In
 router.get('/sign-in', (req, res, next) => {
   res.render('auth/sign-in');
