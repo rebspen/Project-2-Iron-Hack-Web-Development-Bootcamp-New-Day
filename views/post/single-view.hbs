@@ -3,5 +3,7 @@
     {{> fullview}}
   
 {{/with}}
-
-<button type="button" class="btn btn-outline-primary btn-block"><a href = `/post/{{post._id}}/delete` >Sign out</a></button>
+{{post.author._id}}
+<form action="/post/{{post.author._id}}/{{post._id}}/delete" method="POST">
+  <button class="btn">Delete</button>
+</form>
