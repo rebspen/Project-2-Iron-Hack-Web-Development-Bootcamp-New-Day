@@ -39,4 +39,17 @@ router.post('/create', routeGuard, (req, res, next) => {
     });
   });
 
+  router.get('/:postId', (req, res, next) => {
+    const postId = req.params.postId;
+    Post.findById(postId)
+      .populate('author')
+      .then(post => {
+        console.log(post);
+        res.render('post/single-view', { post });
+      })
+      .catch(error => {
+        next(error);
+      });
+  });
+
 module.exports = router;

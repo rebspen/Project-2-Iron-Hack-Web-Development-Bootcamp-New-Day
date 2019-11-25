@@ -10,9 +10,14 @@ const routeGuard = require('./../middleware/route-guard');
 
 router.get('/:userId', routeGuard, (req, res, next) => {
   const userId = req.params.userId;
+  let user;
   User.findById(userId)
-    .then(user => {
-      res.render('profile', {user});
+    .then(document => {
+      user = document;
+      return Post.find({ author: userId }).populate('author');
+    })
+    .then(posts => {
+      res.render('profile', { user, posts });
     })
     .catch(error => {
       next(error);
