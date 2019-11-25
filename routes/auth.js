@@ -14,9 +14,51 @@ router.get('/', (req, res, next) => {
   res.render('index');
 });
 
+router.get('/profile', (req, res, next) => {
+  res.render('profile');
+});
 
+
+//Sign In
 router.get('/sign-in', (req, res, next) => {
   res.render('auth/sign-in');
+});
+
+router.post('/auth/sign-in', (req, res, next) => {
+  let userId;
+  const { email, password } = req.body;
+  // Find a user with an email that corresponds to the one
+  // inserted by the user in the sign in form
+  User.findOne({ email })
+    .then(user => {
+      if (!user) {
+      return Promise.reject(new Error("There is no user with that email. Please try again"));
+
+      } else if (user.status == "Pending") {
+        // If no user was found, return a rejection with an error
+        // that will be sent to the error handler at the end of the promise chain
+        return Promise.reject(new Error("You have not verified your email. Please Verify"));
+      } else {
+        // If there is an user,
+        // save their ID to an auxiliary variable
+        userId = user._id;
+        // Compare the password with the salt + hash stored in the user document
+        return bcryptjs.compare(password, user.passwordHash);
+      }
+    })
+    .then(result => {
+      if (result) {
+        // If they match, the user has successfully been signed up
+        req.session.user = userId;
+        res.redirect('/profile');
+      } else {
+        // If they don't match, reject with an error message
+        return Promise.reject(new Error('Wrong password. Please try again.'));
+      }
+    })
+    .catch(error => {
+      next(error);
+    });
 });
 
 router.get('/verified', (req, res, next) => {
@@ -101,9 +143,19 @@ router.post('/auth/sign-up', uploader.single('profile'), (req, res, next) => {
       req.session.user = user._id; 
       res.redirect(`/${user._id}`);
     })
+
     .catch(error => {
       next(error); 
     });
   });
   
+
+  //Sign Out 
+  router.post('/sign-out', (req, res, next) => {
+  // When user submits form to sign out,
+  // destroy the session
+  req.session.destroy();
+  res.redirect('/');
+});
+
   module.exports = router;
