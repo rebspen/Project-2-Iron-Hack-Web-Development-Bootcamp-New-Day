@@ -21,7 +21,7 @@ const schema = new mongoose.Schema({
     required: true,
     trim: true
   },
-  
+
   imgName: String,
   imgPath: String,
   theme :{
@@ -30,6 +30,7 @@ const schema = new mongoose.Schema({
     default: "None" 
   }, 
   confirmationCode: String,
+  
   status: {
     type: String,
     enum: ["Active", "Pending"],
