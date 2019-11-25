@@ -14,10 +14,6 @@ router.get('/', (req, res, next) => {
   res.render('index');
 });
 
-router.get('/profile', (req, res, next) => {
-  res.render('profile');
-});
-
 //Sign In
 router.get('/sign-in', (req, res, next) => {
   res.render('auth/sign-in');
@@ -49,7 +45,7 @@ router.post('/auth/sign-in', (req, res, next) => {
       if (result) {
         // If they match, the user has successfully been signed up
         req.session.user = userId;
-        res.redirect('/profile');
+        res.redirect(`/${userId}`);
       } else {
         // If they don't match, reject with an error message
         return Promise.reject(new Error('Wrong password. Please try again.'));
