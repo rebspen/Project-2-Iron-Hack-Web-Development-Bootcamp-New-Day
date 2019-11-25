@@ -80,7 +80,6 @@ router.post('/sign-up', uploadCloud.single('profile'), (req, res, next) => {
         //text: `http://localhost:3000/auth/confirm/${token}`,
         html: `
           <style>
-          
           </style>
           <h1 style="color: green">Welcome to the New Day App!<h1>
           <a href ="http://localhost:3000/confirm/${token}">Click here</a>
@@ -92,7 +91,7 @@ router.post('/sign-up', uploadCloud.single('profile'), (req, res, next) => {
       // send to the error handler
       next(error);
     });
-});
+}); 
 
 router.get('/confirm/:code', (req, res, next) => {
   const code = req.params.code;
