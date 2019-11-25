@@ -1,11 +1,8 @@
 <h2>Create a new entry</h2>
-
-<form action="/post/pm" method="POST">
-  <label for="amazing1">Amazing things that happened today...</label>
-  <textarea id ="amazing1" name="amazing-body1" maxlength="100" placeholder="Write here..." required></textarea>
-  <textarea id ="amazing2" name="amazing-body2" maxlength="100" placeholder="..." required></textarea>
-  <textarea id ="amazing3" name="amazing-body3" maxlength="100" placeholder="..." required></textarea>
+<form action="/post/{{ post._id }}/edit" method="POST">
+  <label for="today">Amazing things that happened today...</label>
+  <textarea id ="amazing" name="today" maxlength="200" placeholder="Write here..." required></textarea>
   <label for="better">How could I have made today even better?</label>
-  <textarea id ="better" name="better" maxlength="100" placeholder="I could have..." required></textarea>
+  <textarea id ="better" name="better" maxlength="200" placeholder="I could have..." required></textarea>
   <button class="btn">I'm done</button>
 </form>

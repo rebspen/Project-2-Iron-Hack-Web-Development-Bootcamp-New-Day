@@ -52,4 +52,35 @@ router.post('/create', routeGuard, (req, res, next) => {
       });
   });
 
+  router.get('/:postId/edit', routeGuard, (req, res, next) => {
+    const postId = req.params.postId;
+    Post.findById(postId)
+      .then(post => {
+          res.render('post/pm', { post });
+      })
+      .catch(error => {
+        next(error);
+      });
+  });
+
+router.post('/:postId/edit', routeGuard, (req, res, next) => {
+  const postId = req.params.postId;
+  console.log("POSTID -------------" , postId);
+  Post.findOneAndUpdate(
+    {
+      _id: postId
+    },
+    {
+      today: req.body.today,
+      better: req.body.better
+    }
+    )
+    .then(
+      res.redirect(`/post/${postId}`)
+      )
+      .catch(error => {
+        next(error);
+      });
+    });
+
 module.exports = router;
