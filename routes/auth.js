@@ -101,7 +101,7 @@ router.post('/auth/sign-up', uploader.single('profile'), (req, res, next) => {
       User.find({confirmationcode: code});
       req.session.user = user._id;
       console.log("LOOK HERE FOR USER:" + user + user._id); 
-      res.redirect(`/profile/${user._id}`);
+      res.redirect(`/${user._id}`);
     })
     .catch(error => {
       next(error); 

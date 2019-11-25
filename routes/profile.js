@@ -6,16 +6,11 @@ const router = new Router();
 const Post = require('./../models/post');
 const User = require('./../models/user');
 
-router.get('/profile/:userId', (req, res, next) => {
+router.get('/:userId', (req, res, next) => {
   const userId = req.params.userId;
-  let user;
   User.findById(userId)
-    .then(document => {
-      user = document;
-      return Post.find({ author: userId }).populate('author');
-    })
-    .then(posts => {
-      res.render('profile', { user, posts });
+    .then(user => {
+      res.render('profile', {user});
     })
     .catch(error => {
       next(error);

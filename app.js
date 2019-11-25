@@ -76,7 +76,7 @@ app.use((req, res, next) => {
 
 app.use('/', authRouter);
 app.use('/post', postRouter);
-app.use('/profile', profileRouter);
+app.use('/', profileRouter);
 
 // Catch missing routes and forward to error handler
 app.use((req, res, next) => {
