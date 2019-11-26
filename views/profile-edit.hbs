@@ -1,23 +1,21 @@
-<h1>Editing profile view</h1>
+<h1>Editing You Details</h1>
 
 <form action="/{{user._id}}/edit" method="POST" enctype="multipart/form-data">
 
   <label for="input-name">Update Name</label>
-  <input type="text" id="input-name" name="name" placeholder="Your Name" />
-  <br>
+  <textarea type="text" id="input-name" name="name" >{{user.name}}</textarea>
 
  
-  <label for="input-picture">Update Profile Picture</label>
-  <input type="file" name="profile">
-  <br>
+  <label for="email">Update Email</label>
+  <textarea type="text" id="email" name="email" >{{user.email}}</textarea>
 
-<label for="location">Update Location</label>
-  <input type="text" name="location" id="input-location" placeholder="Please write your country"/>
-  
-  <br>
+
+ <label for="location">Update Location</label>
+ <textarea type="text" id="loaction" name="email" >{{user.location}}</textarea>
 
   <label for="theme">Update Theme</label>
   <select name="theme" id="input-theme" placeholder="Choose theme">
+  <option value="None">{{user.theme}}</option>
   <option value="None">None</option>
   <option value="Forest">Forest</option>
   <option value="Ocean">Ocean</option>

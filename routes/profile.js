@@ -46,24 +46,45 @@ router.get('/:userId', routeGuard, (req, res, next) => {
       next(error);
     });
   });
-  
+
   router.post('/:userId/edit', routeGuard, (req, res, next) => {
     const userId = req.params.userId;
-    User.findOneAndUpdate({_id: userId}, {
-      name: req.body.name,
-      location: req.body.location,
-      imgPath: req.file.originalname,
-      imgName: req.file.url,
-      theme: req.body.theme
-    })
-      .then(result => { 
-      console.log(result)
-      res.redirect(`/${userId}`)
+  
+    User.findOneAndUpdate(
+      {
+        _id: userId
+      },
+      {
+        name: req.body.name,
+        email: req.body.email,
+        location: req.body.location,
+        theme: req.body.theme
+      }
+    )
+      .then(data => {
+        res.redirect(`/${userId}`);
       })
-        .catch(error => {
-          next(error);
-        });
+      .catch(error => {
+        next(error);
       });
+  });
+  
+  // router.post('/:userId/edit', routeGuard, (req, res, next) => {
+  //   const userId = req.params.userId;
+  //   User.findByIdAndUpdate({_id: userId}, {
+  //     name: req.body.name,
+  //     email: req.body.email,
+  //     location: req.body.location,
+  //     theme: req.body.theme
+  //   })
+  //     .then(result => { 
+  //     console.log(result)
+  //     res.redirect(`/${userId}`)
+  //     })
+  //       .catch(error => {
+  //         next(error);
+  //       });
+  //     });
     
 
 module.exports = router;

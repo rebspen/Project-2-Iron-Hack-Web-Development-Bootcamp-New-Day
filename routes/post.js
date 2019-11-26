@@ -38,7 +38,7 @@ router.post('/create', routeGuard, (req, res, next) => {
     });
   });
   
-  router.get('/:postId', (req, res, next) => {
+  router.get('/:postId', routeGuard, (req, res, next) => {
     const postId = req.params.postId;
     Post.findById(postId)
     .populate('author')

@@ -1,5 +1,5 @@
 module.exports = (req, res, next) => {
-  const userId = req.session;
+  const userId = req.session.user;
     if (userId) {
       next();
     } else {
