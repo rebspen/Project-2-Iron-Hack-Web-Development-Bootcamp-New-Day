@@ -1,3 +1,9 @@
 <h2>{{quote.text}}</h2>
 <p>{{quote.author}}</p>
-<button type="button" class="btn btn-outline-primary btn-block"><a href = "/sign-out">Sign out</a></button>
+{{!-- <button type="button" class="btn btn-outline-primary btn-block"><a href = "/{{user}}">Profile</a></button> --}}
+
+<script>
+         setTimeout(function(){
+            window.location.href = `http://localhost:3000/profile`;
+         }, 4000);
+</script>
