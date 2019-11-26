@@ -2,18 +2,47 @@ body {
   margin: 0;
   color: #3a3940;
   padding: 30px;
-  font-family: 'Poiret One', sans-serif; }
+  font-family: 'Poiret One', sans-serif;
+  background: url("/images/bg32.png") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+
+p {
+  font-family: 'Athiti', sans-serif; }
+
+a {
+  font-family: 'Athiti', sans-serif;
+  font-size: 25px;
+  text-decoration-style: none;
+  color: #004445; }
+
+.shortBtn {
+  font-family: 'Athiti', sans-serif;
+  font-size: 25px;
+  text-decoration-style: none;
+  color: #004445;
+  border: none;
+  text-align: center;
+  background: transparent; }
 
 .tagline {
   border-bottom: 5px solid #a59795; }
 
-.btn {
-  border-top: 1px solid #3a3940;
-  border-bottom: 1px solid #3a3940;
+form {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 auto; }
+
+form {
+  font-size: 20px;
   text-align: center;
-  background: url("/images/bg2.jpeg");
-  opacity: 0.8;
-  text-decoration-style: none; }
+  display: flex;
+  justify-content: center;
+  flex-direction: column; }
 
 .single-post {
   display: flex;
@@ -40,31 +69,23 @@ h1 {
   width: 10rem; }
 
 .mainContainer {
-  -webkit-box-shadow: 14px 17px 3px -2px #9aa39e;
-  -moz-box-shadow: 14px 17px 3px -2px #9aa39e;
-  box-shadow: 14px 17px 3px -2px #9aa39e;
   display: flex;
   justify-content: center;
   flex-direction: column;
   flex-wrap: wrap;
-  text-align: center;
-  background: rgba(255, 255, 255, 0.8); }
+  text-align: center; }
 
 input {
-  font-size: 15px;
+  background: transparent;
+  font-family: 'Athiti', sans-serif;
+  color: black;
+  font-size: 20px;
   font-style: italic;
   margin: 0 auto;
   width: 300px;
   border: none;
-  border-bottom: 1px solid darkslategrey;
+  border-bottom: 2px solid #779fa1;
   text-align: center; }
-
-form {
-  font-size: 20px;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  flex-direction: column; }
 
 .contain {
   position: absolute;

@@ -3,22 +3,57 @@ body {
   color: #3a3940;
   padding: 30px;
   font-family: 'Poiret One', sans-serif;
+  background: url('/images/bg32.png') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  // background: #f9f9f9;
+}
+
+p {
+  font-family: 'Athiti', sans-serif;
+}
+
+a {
+  font-family: 'Athiti', sans-serif;
+  font-size: 25px;
+  text-decoration-style: none;
+  color: #004445;
+  // color: #779fa1;
+}
+
+.shortBtn {
+  font-family: 'Athiti', sans-serif;
+  font-size: 25px;
+  text-decoration-style: none;
+  color: #004445;
+  border: none;
+  text-align: center;
+  background: transparent;
 }
 
 .tagline {
   border-bottom: 5px solid#a59795;
 }
 
-.btn {
-  border-top: 1px solid #3a3940;
-  border-bottom: 1px solid #3a3940;
-  text-align: center;
-  background: url('/images/bg2.jpeg');
-  opacity: 0.8;
-  text-decoration-style: none;
+form {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 auto;
 }
-//profile page
 
+form {
+  font-size: 20px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+//profile page
 .single-post {
   display: flex;
   justify-content: center;
@@ -32,7 +67,6 @@ body {
 }
 
 //INDEX
-
 h1 {
   font-size: 80px;
   display: flex;
@@ -51,41 +85,41 @@ h1 {
 }
 
 .mainContainer {
-  -webkit-box-shadow: 14px 17px 3px -2px rgba(154, 163, 158, 1);
-  -moz-box-shadow: 14px 17px 3px -2px rgba(154, 163, 158, 1);
-  box-shadow: 14px 17px 3px -2px rgba(154, 163, 158, 1);
+  // -webkit-box-shadow: 14px 17px 3px -2px rgba(154, 163, 158, 1);
+  // -moz-box-shadow: 14px 17px 3px -2px rgba(154, 163, 158, 1);
+  // box-shadow: 14px 17px 3px -2px rgba(154, 163, 158, 1);
   display: flex;
   justify-content: center;
   flex-direction: column;
   flex-wrap: wrap;
   text-align: center;
-  background: rgba(255, 255, 255, 0.8);
+  // background: #f9f9f9;
 }
 
 input {
-  font-size: 15px;
+  background: transparent;
+  font-family: 'Athiti', sans-serif;
+  color: black;
+  font-size: 20px;
   font-style: italic;
   margin: 0 auto;
   width: 300px;
   border: none;
-  border-bottom: 1px solid darkslategrey;
+  border-bottom: 2px solid #779fa1;
   text-align: center;
   // width: 400px;
-}
-
-form {
-  font-size: 20px;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
 }
 
 //MAP
 
 //quote
 
+<<<<<<< HEAD
 .contain{
+=======
+.contain {
+  border: 1px solid black;
+>>>>>>> 06d8ea5be6ec4c8e5ae45dc322e23658ea44cd2b
   position: absolute;
   left: 0px;
   top: 0px;
@@ -93,7 +127,7 @@ form {
   // color: aliceblue;
 }
 
-.tag{
+.tag {
   float: left;
   position: absolute;
   left: 0px;
@@ -102,10 +136,10 @@ form {
   padding: 20px;
   width: 100%;
   color: white;
-  padding-top: 30%
+  padding-top: 30%;
 }
 
-.quote-img{
+.quote-img {
   width: 100%;
 }
 
