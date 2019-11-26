@@ -113,19 +113,15 @@ router.post('/auth/sign-up', uploader.single('profile'), (req, res, next) => {
     transporter.sendMail({
       from: `New Day App<${process.env.EMAIL}>`,
       to: req.body.email,
-      subject: 'Hi! Please verify your email to use New Day',
+      subject: 'Nice to meet you! Please verify your email to use the New Day app',
       //text: `http://localhost:3000/auth/confirm/${token}`,
-      html: `
-      <style>
       
-      </style>
-
-      <h1 style="color: pink">Welcome to the New Day App!<h1>
-
-      <a href ="http://localhost:3000/confirm/${token}">Click Here</a>
-
-      <p><strong>Please verify your email by clicking on the link</strong> 
-      <em></em></p>
+      html: `
+      <style></style>
+      <div style="background-colour: yellow"> 
+      <h1 style="color:  #779FA1; font-size: 50px; text-align: center">Welcome To The New Day App</h1>    
+      <h2 style="color: #5C7457; font-size: 40px; text-align: center"><strong>Please verify your email by clicking <a href="http://localhost:3000/confirm/${token}">here</a></h2
+      </div>
       `
     }))
     .catch(error => {
@@ -148,11 +144,8 @@ router.post('/auth/sign-up', uploader.single('profile'), (req, res, next) => {
     });
   });
   
-
   //Sign Out 
   router.post('/sign-out', (req, res, next) => {
-  // When user submits form to sign out,
-  // destroy the session
   req.session.destroy();
   res.redirect('/');
 });
