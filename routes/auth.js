@@ -16,8 +16,12 @@ router.get('/', (req, res, next) => {
 
 //Sign In
 router.get('/sign-in', (req, res, next) => {
-  res.render('auth/sign-in');
-});
+  const userId = req.session.user;
+  if(req.session.user){
+    res.redirect(`/${userId}`);
+  } else {
+    res.render('auth/sign-in');}
+  });
 
 router.post('/auth/sign-in', (req, res, next) => {
   let userId;
