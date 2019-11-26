@@ -85,15 +85,29 @@ form {
 
 //quote
 
-.quote{
- 
-  background: none
+.contain{
+  border: 1px solid black;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  margin: none;
   // color: aliceblue;
 }
 
-.quote-img{
-  
+.tag{
+  float: left;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: 1000;
+  padding: 20px;
+  width: 100%;
+  color: white;
+  padding-top: 30%
+}
 
+.quote-img{
+  width: 100%;
 }
 
 //BUTTON
