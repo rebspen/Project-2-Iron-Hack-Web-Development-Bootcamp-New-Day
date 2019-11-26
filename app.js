@@ -60,6 +60,7 @@ app.use(
       // We're setting cookie.secure to true on non-development environments only
       // since in dev mode we're loading localhost throught http
       secure: process.env.NODE_ENV !== 'development'
+      // secure: true
     },
     // Mongo store is going to save the value of req.session in a database record
     // that will be loaded to req.session in every request
