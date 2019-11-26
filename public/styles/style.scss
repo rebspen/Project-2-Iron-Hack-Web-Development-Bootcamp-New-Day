@@ -17,15 +17,17 @@ p {
 
 a {
   font-family: 'Athiti', sans-serif;
-  font-size: 20px;
+  font-size: 25px;
   text-decoration-style: none;
-  color: #779fa1;
+  color: #004445;
+  // color: #779fa1;
 }
 
 .shortBtn {
   font-family: 'Athiti', sans-serif;
-  border: 1px solid #779fa1;
-  color: #779fa1;
+  font-size: 25px;
+  text-decoration-style: none;
+  color: #004445;
   border: none;
   text-align: center;
   background: transparent;
@@ -97,7 +99,7 @@ h1 {
 input {
   background: transparent;
   font-family: 'Athiti', sans-serif;
-  color: #5c7457;
+  color: black;
   font-size: 20px;
   font-style: italic;
   margin: 0 auto;
@@ -109,12 +111,10 @@ input {
 }
 
 //MAP
-<<<<<<< HEAD
-=======
 
 //quote
 
-.contain{
+.contain {
   border: 1px solid black;
   position: absolute;
   left: 0px;
@@ -123,7 +123,7 @@ input {
   // color: aliceblue;
 }
 
-.tag{
+.tag {
   float: left;
   position: absolute;
   left: 0px;
@@ -132,10 +132,10 @@ input {
   padding: 20px;
   width: 100%;
   color: white;
-  padding-top: 30%
+  padding-top: 30%;
 }
 
-.quote-img{
+.quote-img {
   width: 100%;
 }
 
@@ -223,4 +223,3 @@ input {
 //     }
 //   }
 // }
->>>>>>> 45611b266bf07feb16079d233fdf55e2e35c75bb
