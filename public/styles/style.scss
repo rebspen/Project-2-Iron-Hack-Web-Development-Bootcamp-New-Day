@@ -109,3 +109,118 @@ input {
 }
 
 //MAP
+<<<<<<< HEAD
+=======
+
+//quote
+
+.contain{
+  border: 1px solid black;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  margin: none;
+  // color: aliceblue;
+}
+
+.tag{
+  float: left;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: 1000;
+  padding: 20px;
+  width: 100%;
+  color: white;
+  padding-top: 30%
+}
+
+.quote-img{
+  width: 100%;
+}
+
+//BUTTON
+
+// $primary: #f0ccb2;
+// $secondary: #f0ccb2;
+// $animation: 0.4s all ease;
+// *::before,
+// *::after {
+//   -webkit-box-sizing: border-box;
+//   -moz-box-sizing: border-box;
+//   box-sizing: border-box;
+// }
+
+// a {
+//   color: #333;
+//   text-decoration: none;
+//   transition: $animation;
+//   &:hover {
+//     color: $primary;
+//   }
+//   &:focus {
+//     text-decoration: none;
+//   }
+//   &:active {
+//     color: #fff;
+//   }
+// }
+
+// .flex {
+//   display: flex;
+//   align-items: center;
+//   flex-direction: column;
+//   justify-content: center;
+// }
+
+// .bttn {
+//   width: 90px;
+//   height: 70px;
+//   line-height: 80px;
+//   text-align: center;
+//   text-transform: uppercase;
+//   letter-spacing: 1px;
+//   font-weight: bold;
+//   position: relative;
+//   &:after {
+//     transition: $animation;
+//     content: '';
+//     position: absolute;
+//     left: 0;
+//     top: 0;
+//     bottom: 0;
+//     right: 0;
+//     border-radius: 1px;
+//     border: 4px solid $primary;
+//   }
+//   &:before {
+//     content: '';
+//     // position: absolute;
+//     border-radius: 3px;
+//     left: 0;
+//     top: 0;
+//     bottom: 0;
+//     right: 0;
+//     -webkit-transform: rotate(45deg);
+//     transform: rotate(45deg);
+//     background: #fff;
+//     z-index: -1;
+//   }
+//   &:hover {
+//     &:after {
+//       -webkit-transform: rotate(45deg);
+//       transform: rotate(45deg);
+//     }
+//   }
+//   &:active {
+//     -webkit-transform: scale(1.1);
+//     transform: scale(1.1);
+//     &:before {
+//       background-color: $secondary;
+//     }
+//     &:after {
+//       border-color: $secondary;
+//     }
+//   }
+// }
+>>>>>>> 45611b266bf07feb16079d233fdf55e2e35c75bb

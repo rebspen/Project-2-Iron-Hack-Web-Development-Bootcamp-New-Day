@@ -86,4 +86,32 @@ input {
   border-bottom: 2px solid #779fa1;
   text-align: center; }
 
+form {
+  font-size: 20px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column; }
+
+.contain {
+  border: 1px solid black;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  margin: none; }
+
+.tag {
+  float: left;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: 1000;
+  padding: 20px;
+  width: 100%;
+  color: white;
+  padding-top: 30%; }
+
+.quote-img {
+  width: 100%; }
+
 /*# sourceMappingURL=style.css.map */
