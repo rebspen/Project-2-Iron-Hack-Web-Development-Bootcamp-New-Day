@@ -2,12 +2,15 @@
   <h1>Hey, {{user.name}}</h1> 
 
   <img class="profileImg" src= {{user.imgName}}>
+
+  <a href="/{{user._id}}/edit" class="card-link">Edit Profile</a>
   
 <button type="button" class="btn btn-outline-primary btn-block"><a href = "post/create">Write Journal</a></button>
 
   {{#each posts}}
       {{> singlepost}}
   {{/each}}
-  
+
+
 </div>
 
