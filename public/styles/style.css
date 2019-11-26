@@ -2,18 +2,33 @@ body {
   margin: 0;
   color: #3a3940;
   padding: 30px;
-  font-family: 'Poiret One', sans-serif; }
+  font-family: 'Poiret One', sans-serif;
+  background: #f9f9f9; }
+
+p {
+  font-family: 'Athiti', sans-serif; }
+
+a {
+  font-family: 'Athiti', sans-serif;
+  font-size: 20px;
+  text-decoration-style: none;
+  color: #779fa1; }
+
+.shortBtn {
+  border: 1px solid #779fa1;
+  color: #779fa1;
+  border: none;
+  text-align: center; }
 
 .tagline {
   border-bottom: 5px solid #a59795; }
 
-.btn {
-  border-top: 1px solid #3a3940;
-  border-bottom: 1px solid #3a3940;
-  text-align: center;
-  background: url("/images/bg2.jpeg");
-  opacity: 0.8;
-  text-decoration-style: none; }
+form {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 auto; }
 
 .single-post {
   display: flex;
@@ -40,23 +55,22 @@ h1 {
   width: 10rem; }
 
 .mainContainer {
-  -webkit-box-shadow: 14px 17px 3px -2px #9aa39e;
-  -moz-box-shadow: 14px 17px 3px -2px #9aa39e;
-  box-shadow: 14px 17px 3px -2px #9aa39e;
   display: flex;
   justify-content: center;
   flex-direction: column;
   flex-wrap: wrap;
   text-align: center;
-  background: rgba(255, 255, 255, 0.8); }
+  background: #f9f9f9; }
 
 input {
-  font-size: 15px;
+  font-family: 'Athiti', sans-serif;
+  color: #5c7457;
+  font-size: 20px;
   font-style: italic;
   margin: 0 auto;
   width: 300px;
   border: none;
-  border-bottom: 1px solid darkslategrey;
+  border-bottom: 2px solid #779fa1;
   text-align: center; }
 
 form {
