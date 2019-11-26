@@ -11,13 +11,11 @@ const routeGuard = require('./../middleware/route-guard');
 
 router.get('/profile', (req, res, next) => {
   const userId = req.session.user;
-  console.log("HEEERRREE", userId);
   res.redirect(`/${userId}`);
 });
 
 router.get('/:userId', (req, res, next) => {
   const userId = req.params.userId;
-  console.log("YOOOOOOOO", req.session.user)
   let user;
   User.findById(userId)
     .then(document => {
@@ -35,13 +33,11 @@ router.get('/:userId', (req, res, next) => {
 
 //EDITING USER INFORMATION 
 
-
   router.get('/:userId/edit', (req, res, next) => {
     const userId = req.params.userId;
-    let user;
     User.findById(userId)
-    .then(post => {
-      res.render('profile-edit', { post });
+    .then(user => {
+      res.render('profile-edit', { user });
     })
     .catch(error => {
       next(error);
@@ -50,11 +46,9 @@ router.get('/:userId', (req, res, next) => {
 
   router.post('/:userId/edit', (req, res, next) => {
     const userId = req.params.userId;
-  
-    User.findOneAndUpdate(
-      {
-        _id: userId
-      },
+    User.findByIdAndUpdate(
+         userId
+      ,
       {
         name: req.body.name,
         email: req.body.email,

@@ -86,7 +86,6 @@ form {
 //quote
 
 .contain{
-  border: 1px solid black;
   position: absolute;
   left: 0px;
   top: 0px;
@@ -109,6 +108,16 @@ form {
 .quote-img{
   width: 100%;
 }
+
+.quote-body{
+  font-size: 2em;
+  font-family: 'Oswald', sans-serif;
+}
+
+.quote-auth{
+  font-family: 'Oswald', sans-serif;
+}
+
 
 //BUTTON
 

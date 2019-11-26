@@ -84,7 +84,6 @@ router.post('/create', (req, res, next) => {
   
   router.post('/:postId/edit', (req, res, next) => {
     const postId = req.params.postId;
-    console.log("POSTID -------------" , postId);
     Post.findOneAndUpdate(
       {
         _id: postId
