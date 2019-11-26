@@ -16,22 +16,13 @@ router.get('/create', (req, res, next) => {
 //   res.render('post/quote');
 // });
 
-router.get('/unsplash', (req, res, next) => {
-  unsplash.photos.getRandomPhoto( )
-  .then(data => {
-    data.json().then(
-      response=>{
-        console.log("URL", response.urls);
-        res.render('unsplash', {response});
-      }
-    )
-  });
-});
-
 router.get('/quote', (req, res, next) => {
   const user = req.session.user;
   const quote = Quote.getQuote();
-  unsplash.photos.getRandomPhoto()
+  unsplash.photos.getRandomPhoto({
+    query : 'ocean',
+    orientation: "portrait"
+  })
   .then(data => {
     data.json().then(
       response=>{
