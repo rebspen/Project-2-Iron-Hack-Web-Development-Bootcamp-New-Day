@@ -15,12 +15,13 @@ router.get('/create', routeGuard, (req, res, next) => {
 // });
 
 router.get('/quote', routeGuard, (req, res, next) => {
+  const user = req.session.user;
   const quote = Quote.getQuote();
-  res.render('post/quote', {quote});
+  res.render('post/quote', {quote, user});
 });
 
 router.post('/create', routeGuard, (req, res, next) => {
-  // console.log(req.file);
+  
   Post.create({
     gratitude : req.body.grateful,
     great: req.body.great,
