@@ -111,17 +111,21 @@ router.post('/auth/sign-up', uploader.single('profile'), (req, res, next) => {
     res.redirect('/verified');
   }) .then(
     transporter.sendMail({
-      from: `IH Test <${process.env.EMAIL}>`,
+      from: `New Day App<${process.env.EMAIL}>`,
       to: req.body.email,
-      subject: 'Please verify your email',
+      subject: 'Hi! Please verify your email to use New Day',
       //text: `http://localhost:3000/auth/confirm/${token}`,
       html: `
       <style>
       
       </style>
-      <h1 style="color: green">Welcome to the New Day App!<h1>
-      <a href ="http://localhost:3000/confirm/${token}">Click here</a>
-      <p><strong>Please verify your email by clicking on the link</strong> <em></em></p>
+
+      <h1 style="color: pink">Welcome to the New Day App!<h1>
+
+      <a href ="http://localhost:3000/confirm/${token}">Click Here</a>
+
+      <p><strong>Please verify your email by clicking on the link</strong> 
+      <em></em></p>
       `
     }))
     .catch(error => {
