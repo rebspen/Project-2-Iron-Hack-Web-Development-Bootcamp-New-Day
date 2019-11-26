@@ -1,9 +1,16 @@
-<h2>{{quote.text}}</h2>
+<img class= "quote-img" src = "{{response.urls.regular}}" >
+<div class="container my-auto quote">
+<h3>{{quote.text}} </h3>
+<br>
 <p>{{quote.author}}</p>
+</div>
+
+
+
 {{!-- <button type="button" class="btn btn-outline-primary btn-block"><a href = "/{{user}}">Profile</a></button> --}}
 
-<script>
+{{!-- <script>
          setTimeout(function(){
             window.location.href = `http://localhost:3000/profile`;
          }, 4000);
-</script>
+</script> --}}

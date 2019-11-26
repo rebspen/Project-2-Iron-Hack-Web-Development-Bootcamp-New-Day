@@ -10,6 +10,29 @@ const express = require('express');
 const router = new Router();
 const uploader = require('../middleware/upload.js');
 
+
+//-----
+const fetch = require('node-fetch');
+global.fetch = fetch;
+
+const Unsplash = require('unsplash-js').default;
+
+const unsplash = new Unsplash({ accessKey: process.env.APP_ACCESS_KEY});
+
+router.get('/unsplash', (req, res, next) => {
+  unsplash.photos.getRandomPhoto()
+  .then(data => {
+    data.json().then(
+      response=>{
+        console.log("URL", response.urls);
+        res.render('unsplash', {response});
+      }
+    )
+  });
+});
+
+//--------
+
 router.get('/', (req, res, next) => {
   res.render('index');
 });
@@ -138,11 +161,10 @@ router.post('/auth/sign-up', uploader.single('profile'), (req, res, next) => {
   router.get('/confirm/:code', (req, res, next) => {
     const code = req.params.code;
     User.findOneAndUpdate({confirmationCode : code}, {status: "Active"})
-    .then (user => { 
+    .then(user => { 
       req.session.user = user._id; 
       res.redirect(`/${user._id}`);
     })
-
     .catch(error => {
       next(error); 
     });

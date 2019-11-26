@@ -3,7 +3,12 @@ body {
   color: #3a3940;
   padding: 30px;
   font-family: 'Poiret One', sans-serif;
-  background: #f9f9f9;
+  background: url('/images/bg32.png') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  // background: #f9f9f9;
 }
 
 p {
@@ -18,10 +23,12 @@ a {
 }
 
 .shortBtn {
+  font-family: 'Athiti', sans-serif;
   border: 1px solid #779fa1;
   color: #779fa1;
   border: none;
   text-align: center;
+  background: transparent;
 }
 
 .tagline {
@@ -34,6 +41,14 @@ form {
   justify-content: center;
   flex-direction: column;
   margin: 0 auto;
+}
+
+form {
+  font-size: 20px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 //profile page
@@ -76,10 +91,11 @@ h1 {
   flex-direction: column;
   flex-wrap: wrap;
   text-align: center;
-  background: #f9f9f9;
+  // background: #f9f9f9;
 }
 
 input {
+  background: transparent;
   font-family: 'Athiti', sans-serif;
   color: #5c7457;
   font-size: 20px;
@@ -90,14 +106,6 @@ input {
   border-bottom: 2px solid #779fa1;
   text-align: center;
   // width: 400px;
-}
-
-form {
-  font-size: 20px;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
 }
 
 //MAP

@@ -5,8 +5,10 @@ const router = new Router();
 const Post = require('./../models/post');
 const routeGuard = require('./../middleware/route-guard');
 const Quote = require('inspirational-quotes');
+const unsplash = require('../middleware/unsplash.js');
 
-router.get('/create', routeGuard, (req, res, next) => {
+router.get('/create', (req, res, next) => {
+  console.log("YOOOOOOOO", req.session.user)
   res.render('post/create');
 });
 
@@ -14,14 +16,32 @@ router.get('/create', routeGuard, (req, res, next) => {
 //   res.render('post/quote');
 // });
 
-router.get('/quote', routeGuard, (req, res, next) => {
-  const user = req.session.user;
-  const quote = Quote.getQuote();
-  res.render('post/quote', {quote, user});
+router.get('/unsplash', (req, res, next) => {
+  unsplash.photos.getRandomPhoto( )
+  .then(data => {
+    data.json().then(
+      response=>{
+        console.log("URL", response.urls);
+        res.render('unsplash', {response});
+      }
+    )
+  });
 });
 
-router.post('/create', routeGuard, (req, res, next) => {
-  
+router.get('/quote', (req, res, next) => {
+  const user = req.session.user;
+  const quote = Quote.getQuote();
+  unsplash.photos.getRandomPhoto()
+  .then(data => {
+    data.json().then(
+      response=>{
+        res.render('post/quote', {quote, user, response});
+      }
+    );
+  });
+});
+
+router.post('/create', (req, res, next) => {
   Post.create({
     gratitude : req.body.grateful,
     great: req.body.great,
@@ -38,7 +58,7 @@ router.post('/create', routeGuard, (req, res, next) => {
     });
   });
   
-  router.get('/:postId', routeGuard, (req, res, next) => {
+  router.get('/:postId', (req, res, next) => {
     const postId = req.params.postId;
     Post.findById(postId)
     .populate('author')
@@ -51,7 +71,7 @@ router.post('/create', routeGuard, (req, res, next) => {
     });
   });
   
-  router.get('/:postId/edit', routeGuard, (req, res, next) => {
+  router.get('/:postId/edit', (req, res, next) => {
     const postId = req.params.postId;
     Post.findById(postId)
     .then(post => {
@@ -62,7 +82,7 @@ router.post('/create', routeGuard, (req, res, next) => {
     });
   });
   
-  router.post('/:postId/edit', routeGuard, (req, res, next) => {
+  router.post('/:postId/edit', (req, res, next) => {
     const postId = req.params.postId;
     console.log("POSTID -------------" , postId);
     Post.findOneAndUpdate(
@@ -82,7 +102,7 @@ router.post('/create', routeGuard, (req, res, next) => {
         });
       });
     
-    router.post('/:authId/:postId/delete', routeGuard, (req, res, next) => {
+    router.post('/:authId/:postId/delete', (req, res, next) => {
       const postId = req.params.postId;
       const userId = req.params.authId;
       Post.findOneAndDelete({
