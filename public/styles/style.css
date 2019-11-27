@@ -26,6 +26,9 @@ a {
   text-align: center;
   background: transparent; }
 
+.navBtn {
+  border: none; }
+
 .tagline {
   border-bottom: 5px solid #a59795; }
 
