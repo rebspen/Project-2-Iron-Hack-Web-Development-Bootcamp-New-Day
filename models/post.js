@@ -12,7 +12,8 @@ const schema = new mongoose.Schema({
     ref: 'User'
   },
   today: String,
-  better: String
+  better: String,
+  location: String
 },
 {
   timestamps: true
