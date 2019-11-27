@@ -63,9 +63,8 @@ h5 {
   padding: 10px;
 }
 
-.signup{
+.signup {
   margin-bottom: 2%;
-
 }
 
 p {
@@ -73,6 +72,13 @@ p {
 }
 
 a {
+  font-family: 'Athiti', sans-serif;
+  font-size: 25px;
+  text-decoration-style: none;
+  color: #004445;
+}
+
+.signOut {
   font-family: 'Athiti', sans-serif;
   font-size: 25px;
   text-decoration-style: none;
@@ -112,6 +118,15 @@ a {
   text-align: center;
 }
 
+.profileContainer {
+  padding: 30px;
+  // display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
 .shortBtn {
   font-family: 'Athiti', sans-serif;
   font-size: 25px;
@@ -120,10 +135,6 @@ a {
   border: none;
   text-align: center;
   background: transparent;
-}
-
-.navBtn {
-  border: none;
 }
 
 .tagline {
@@ -147,7 +158,6 @@ form {
 
 .profileImg {
   width: 2em;
-  padding-bottom: 1em;
   margin: 0 auto;
 }
 

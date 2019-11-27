@@ -64,6 +64,12 @@ a {
   text-decoration-style: none;
   color: #004445; }
 
+.signOut {
+  font-family: 'Athiti', sans-serif;
+  font-size: 25px;
+  text-decoration-style: none;
+  color: #004445; }
+
 .dailyAffirm {
   font-family: 'Athiti', sans-serif;
   font-size: 20px; }
@@ -90,6 +96,13 @@ a {
   flex-wrap: wrap;
   text-align: center; }
 
+.profileContainer {
+  padding: 30px;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  text-align: center; }
+
 .shortBtn {
   font-family: 'Athiti', sans-serif;
   font-size: 25px;
@@ -98,9 +111,6 @@ a {
   border: none;
   text-align: center;
   background: transparent; }
-
-.navBtn {
-  border: none; }
 
 .tagline {
   border-bottom: 5px solid #a59795; }
@@ -119,7 +129,6 @@ form {
 
 .profileImg {
   width: 2em;
-  padding-bottom: 1em;
   margin: 0 auto; }
 
 textarea {
