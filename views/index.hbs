@@ -1,22 +1,30 @@
 <div class="mainContainer">
 
-  <div class="title"><h1>New Day</h1></div>
-  <p> <span></span>The daily 5 minute journal you'll actually stick with.... </span></p>
-{{!-- 
-<button type="button" class="btn">
-<a href= "/sign-in">Sign in</a>
-<br>
-<button type="button" class="btn"><a href = "/sign-up">Sign up</a></button>
-<br> --}}
+  <h1>New Day</h1>
+
+  <p> <span>The daily 5 minute journal you'll actually stick with.... </span></p>
 
   <a href="/sign-in">Sign In</a>
   <a class = "signup" href="/sign-up">Sign Up</a>
   <br>
-<div class = "affirm" ><p>Daily community affirmation...</p><br><p>"{{result.affirmation}}"</p></div>
+
+
+<div class="affirm">
+  <p>Daily community affirmation:</p>
+
+  <br>
+  
+  <p>"{{result.affirmation}}"</p>
+</div>
+
+{{!-- MAP --}}
 <div id="map"></div>
-<div id = "locations" ><p>{{result.location}}</p></div>
+<div id = "locations"><p>{{result.location}}</p></div>
 
 </div>
+
+
+
 
 <script>
  let geocoder;
@@ -30,41 +38,11 @@ function initialize()
   var mapOptions = 
   {
     zoom: 2,
-    center: latlng
-  }
-  map = new google.maps.Map(document.getElementById('map'), mapOptions);
-  codeAddress(city);
+    disableDefaultUI: true,
+    scrollwheel: false, 
+    center: latlng,
 
-  
-}
-
-function codeAddress(address) 
-{
-  geocoder.geocode( {address:address}, function(results, status) 
-  {
-    if (status == google.maps.GeocoderStatus.OK) 
-    {
-      map.setCenter(results[0].geometry.location);//center the map over the result
-      //place a marker at the location
-      var marker = new google.maps.Marker(
-      {
-          map: map,
-          position: results[0].geometry.location
-      });
-    } else {
-      alert('Geocode was not successful for the following reason: ' + status);
-   }
-  });
-}
- {{! function initMap () {
-   const myLatLng = {lat: -25.363, lng: 131.044};
-   const $mapContainer = document.getElementById('map');
-    const map = new window.google.maps.Map($mapContainer, {
-      center: myLatLng,
-      zoom: 2,
-      disableDefaultUI: true,
-      scrollwheel: false, 
-      styles: 
+          styles: 
    [
     {
         "featureType": "water",
@@ -244,14 +222,31 @@ function codeAddress(address)
             }
         ]
     }
-]}); 
+]
 
-const marker = new google.maps.Marker({
-    position: myLatLng,
-    map: map,
-    title: 'Hello World!'
+
+     //END MAP STYLE HERE!!! 
+  }
+  map = new google.maps.Map(document.getElementById('map'), mapOptions);
+  codeAddress(city);
+}
+
+function codeAddress(address) 
+{
+  geocoder.geocode( {address:address}, function(results, status) 
+  {
+    if (status == google.maps.GeocoderStatus.OK) 
+    {
+      map.setCenter(results[0].geometry.location);//center the map over the result
+      //place a marker at the location
+      var marker = new google.maps.Marker(
+      {
+          map: map,
+          position: results[0].geometry.location
+      });
+    } else {
+      alert('Geocode was not successful for the following reason: ' + status);
+   }
   });
-
-}}};
-
+}
 </script>

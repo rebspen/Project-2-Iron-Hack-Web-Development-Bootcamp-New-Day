@@ -9,9 +9,26 @@ body {
   background-size: cover; }
 
 h1 {
-  font-size: 80px;
-  display: flex;
-  justify-content: center; }
+  margin: 0 auto;
+  width: 7em;
+  display: inline-block;
+  border-top: 1px solid black;
+  padding-top: 0px;
+  border-bottom: 1px solid black;
+  padding-bottom: 10px;
+  font-size: 80px; }
+
+.profileH1 {
+  font-family: 'Poiret One', sans-serif;
+  font-size: 80px; }
+
+.signH1 {
+  font-family: 'Poiret One', sans-serif;
+  font-size: 100px; }
+
+.signH2 {
+  font-family: 'Poiret One', sans-serif;
+  font-size: 80px; }
 
 h2 {
   font-size: 60px; }
@@ -28,6 +45,7 @@ h5 {
   font-size: 15px; }
 
 #map {
+  border-radius: 15px;
   margin: 0 auto;
   width: 70%;
   height: 300px;
@@ -35,7 +53,7 @@ h5 {
   padding: 10px; }
 
 .signup {
-  margin-bottom: 5%; }
+  margin-bottom: 2%; }
 
 p {
   font-family: 'Athiti', sans-serif; }
@@ -55,13 +73,6 @@ a {
 
 .postLink {
   font-size: 15px; }
-
-#map {
-  border-radius: 15px;
-  margin: 0 auto;
-  width: 70%;
-  height: 300px;
-  align-content: center; }
 
 .mainContainer {
   margin-top: 3em;
@@ -171,6 +182,8 @@ input {
   margin-top: 10px; }
 
 .affirm {
+  font-family: 'Poiret One', sans-serif;
+  font-size: 20px;
   z-index: 1000;
   margin-bottom: -80px;
   padding: 0 20%; }
