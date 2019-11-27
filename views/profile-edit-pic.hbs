@@ -1,13 +1,13 @@
-<h1>Editing You Details</h1>
+<h1>Edit Your Profile Picture</h1>
 
-<form action="/{{user._id}}/edit" method="POST">
+<form action="/{{user._id}}/edit/pic" method="POST" enctype="multipart/form-data">
 
-  <label for="input-name">Update Profile Image</label>
+<label for="input-picture">Edit Profile Picture</label>
+<input type="file" name="profile">
+<br>
 
 <br>
-  <button type="submit" class="btn">Edit Information</button>
+  <button type="submit" class="btn">Update</button>
 </form>
-
-
 
 </div>
