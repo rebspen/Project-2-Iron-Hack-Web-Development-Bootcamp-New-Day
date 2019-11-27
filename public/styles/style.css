@@ -38,6 +38,21 @@ h5 {
   font-family: 'Athiti', sans-serif;
   font-size: 15px; }
 
+.affirmText {
+  color: black;
+  font-size: 20px;
+  z-index: 1000;
+  margin-top: -80px; }
+
+span {
+  font-family: 'Oswald', sans-serif;
+  color: #004445;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem; }
+
 #map {
   border-radius: 15px;
   margin: 0 auto;
@@ -106,9 +121,6 @@ a {
   text-align: center;
   background: transparent; }
 
-.tagline {
-  border-bottom: 5px solid #a59795; }
-
 form {
   font-size: 20px;
   display: flex;
@@ -130,6 +142,7 @@ textarea {
   color: black;
   font-size: 20px;
   font-style: italic;
+  width: 350px;
   border: 1px solid #779fa1; }
 
 input {
@@ -188,7 +201,7 @@ input {
   font-family: 'Poiret One', sans-serif;
   font-size: 20px;
   z-index: 1000;
-  margin-bottom: -80px;
+  margin-bottom: -100px;
   padding: 0 20%; }
 
 /*# sourceMappingURL=style.css.map */

@@ -2,24 +2,22 @@
 
   <h1>New Day</h1>
 
-  <p> <span>The daily 5 minute journal you'll actually stick with.... </span></p>
+  <p>The daily 5 minute journal you'll actually stick with...</p>
 
   <a href="auth/sign-in">Sign In</a>
-  <a class = "signup" href="auth/sign-up">Sign Up</a>
+  <a class = "signup mb-5" href="auth/sign-up">Sign Up</a>
   <br>
 
 
-<div class="affirm">
-  <p>Daily community affirmation:</p>
+    <div class="affirm">
+<p> <span>"{{result.affirmation}}"</span></p>
+    {{!-- <p class="affirmText2">"{{result.affirmation}}"</p> --}}
+    </div>
 
-  <br>
-  
-  <p>"{{result.affirmation}}"</p>
-</div>
-
-{{!-- MAP --}}
-<div id="map"></div>
-<div id = "locations"><p>{{result.location}}</p></div>
+    {{!-- MAP --}}
+    <div id="map"></div>
+    {{!-- <p class="affirmText">Affirmation Inspiration: I am..</p> --}}
+    <div id = "locations"><p>{{result.location}}</p></div>
 
 </div>
 
