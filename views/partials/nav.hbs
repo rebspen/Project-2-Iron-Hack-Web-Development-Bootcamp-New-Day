@@ -1,11 +1,15 @@
 
 <nav class="navbar navbar-expand-xl navbar-light bg-light navColor">
-  {{!-- <a class="navbar-brand" href="/{{user._id}}"> --}}
-  {{!-- <img width = "20px" src = "/images/sun.png"></a> --}}
+
+  <a class="navbar-brand" href="/{{user._id}}">
+  <img width = "100px" src = "/images/logo.png">
+  </a>
+
+
    {{!-- <div class="mx-auto order-0"> --}}
-        <img width = "20px" src = "/images/sun.png"></a>
     {{!-- </div> --}}
-    <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+
+    <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2 nav-small">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
                 <a class="nav-link" href="/{{user._id}}">Profile</a>
@@ -14,15 +18,12 @@
                 <a class="nav-link" href="/post/create">Write Journal</a>
             </li>
         </ul>
-    </div>
-  
-    <div class="navbar-collapse collapse w-100 dual-collapse2">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
                 <a class="nav-link" href="/{{user._id}}/edit">Edit Profile</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/{{user._id}}/edit/pic">Edit Profile Pic</a>
+                <a class="nav-link" href="/{{user._id}}/edit/pic">Edit Pic</a>
             </li>
              <li class="nav-item">
               <form action="/sign-out" method="POST">
@@ -30,6 +31,22 @@
             </li>
         </ul>
     </div>
+{{!--   
+    <div class="navbar-collapse collapse w-100 dual-collapse2">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/{{user._id}}/edit">Edit Profile</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/{{user._id}}/edit/pic">Edit Pic</a>
+            </li>
+             <li class="nav-item">
+              <form action="/sign-out" method="POST">
+                <button>Sign Out</button>	         
+            </li>
+        </ul>
+    </div> --}}
+
      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
             <span class="navbar-toggler-icon"></span>
         </button>
