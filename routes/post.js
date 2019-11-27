@@ -9,7 +9,7 @@ const unsplash = require('../middleware/unsplash.js');
 const User = require('./../models/user');
 
 
-router.get('/create', (req, res, next) => {
+router.get('/create',routeGuard, (req, res, next) => {
   const user = req.session.user;
   console.log("USERRRRRR" , user);
   User.findById(user)
@@ -24,7 +24,7 @@ router.get('/create', (req, res, next) => {
 //   res.render('post/quote');
 // });
 
-router.get('/quote', (req, res, next) => {
+router.get('/quote', routeGuard, (req, res, next) => {
   const user = req.session.user;
   const quote = Quote.getQuote();
   unsplash.photos.getRandomPhoto({
@@ -40,7 +40,7 @@ router.get('/quote', (req, res, next) => {
   });
 });
 
-router.post('/create', (req, res, next) => {
+router.post('/create',routeGuard, (req, res, next) => {
   let userId = req.session.user;
   Post.create({
     gratitude : req.body.grateful,
@@ -59,7 +59,7 @@ router.post('/create', (req, res, next) => {
     });
   });
   
-  router.get('/:postId', (req, res, next) => {
+  router.get('/:postId',routeGuard, (req, res, next) => {
     const postId = req.params.postId;
     Post.findById(postId)
     .populate('author')
@@ -72,7 +72,7 @@ router.post('/create', (req, res, next) => {
     });
   });
   
-  router.get('/:postId/edit', (req, res, next) => {
+  router.get('/:postId/edit', routeGuard, (req, res, next) => {
     const postId = req.params.postId;
     Post.findById(postId)
     .then(post => {
@@ -83,7 +83,7 @@ router.post('/create', (req, res, next) => {
     });
   });
   
-  router.post('/:postId/edit', (req, res, next) => {
+  router.post('/:postId/edit',routeGuard, (req, res, next) => {
     const postId = req.params.postId;
     Post.findOneAndUpdate(
       {
@@ -102,7 +102,8 @@ router.post('/create', (req, res, next) => {
         });
       });
     
-    router.post('/:authId/:postId/delete', (req, res, next) => {
+    router.post('/delete/:authId/:postId', routeGuard, (req, res, next) => {
+      console.log("DELEEETE POST REACHED");
       const postId = req.params.postId;
       const userId = req.params.authId;
       console.log("Delete", userId, postId);

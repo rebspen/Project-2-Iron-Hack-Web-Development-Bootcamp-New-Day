@@ -95,7 +95,7 @@ app.use((req, res, next) => {
   }
 });
 
-app.use('/', authRouter);
+app.use('/auth', authRouter);
 app.use('/post', postRouter);
 app.use('/', profileRouter);
 
