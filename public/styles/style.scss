@@ -177,11 +177,12 @@ input {
 
 //create page hiding location
 
-#location{
-  visibility: hidden;
-}
+// #locations{
+//   visibility: hidden;
+// }
 
 .affirm{
   z-index: 1000;
-  padding : 0 20%;
+  margin-bottom: -80px;
+  padding: 0 20%;
 }

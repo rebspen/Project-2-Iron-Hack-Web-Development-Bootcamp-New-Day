@@ -128,11 +128,9 @@ input {
 .navbarContainer {
   margin-top: 10px; }
 
-#location {
-  visibility: hidden; }
-
 .affirm {
   z-index: 1000;
+  margin-bottom: -80px;
   padding: 0 20%; }
 
 /*# sourceMappingURL=style.css.map */

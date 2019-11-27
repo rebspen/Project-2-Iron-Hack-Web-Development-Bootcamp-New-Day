@@ -7,6 +7,7 @@
   
 {{/with}}
 {{post.author._id}}
+
 <form action="/post/{{post.author._id}}/{{post._id}}/delete" method="POST">
   <button class="btn">Delete</button>
 </form>

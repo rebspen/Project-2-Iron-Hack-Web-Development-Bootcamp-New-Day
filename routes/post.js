@@ -105,6 +105,7 @@ router.post('/create', (req, res, next) => {
     router.post('/:authId/:postId/delete', (req, res, next) => {
       const postId = req.params.postId;
       const userId = req.params.authId;
+      console.log("Delete", userId, postId);
       Post.findOneAndDelete({
         _id: postId
       })

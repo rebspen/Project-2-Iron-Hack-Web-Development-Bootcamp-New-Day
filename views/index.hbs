@@ -12,15 +12,16 @@
   <a href="/sign-in">Sign In</a>
   <a class = "signup" href="/sign-up">Sign Up</a>
   <br>
-
-<div class = "affirm" ><p>Community affirmation - "{{userMap}}"</p></div>
+<div class = "affirm" ><p>Daily community affirmation...</p><br><p>"{{result.affirmation}}"</p></div>
 <div id="map"></div>
+<div id = "locations" ><p>{{result.location}}</p></div>
 
 </div>
 
 <script>
  let geocoder;
- let city = ["United Kingdom","japan"]
+ let $location = document.getElementById('locations').innerText
+ let city = $location
 
 function initialize() 
 {
@@ -32,9 +33,8 @@ function initialize()
     center: latlng
   }
   map = new google.maps.Map(document.getElementById('map'), mapOptions);
-  for (let i=0; i<city.length; i++){
-      codeAddress(city[i]);
-  }
+  codeAddress(city);
+
   
 }
 
@@ -44,7 +44,7 @@ function codeAddress(address)
   {
     if (status == google.maps.GeocoderStatus.OK) 
     {
-      {{!-- map.setCenter(53.3496, -6.3263);//center the map over the result --}}
+      map.setCenter(results[0].geometry.location);//center the map over the result
       //place a marker at the location
       var marker = new google.maps.Marker(
       {
