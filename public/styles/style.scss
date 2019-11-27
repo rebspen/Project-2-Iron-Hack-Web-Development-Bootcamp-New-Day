@@ -1,22 +1,37 @@
 body {
   margin: auto;
   color: #3a3940;
-  // padding-left: 30px;
-  // padding-right: 30px;
   font-family: 'Poiret One', sans-serif;
   background: url('/images/6bg.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  // background: #f9f9f9;
 }
 
-#map {
-  margin: 0 auto;
-  width: 70%;
-  height: 300px;
-  align-content: center;
+//FONT SIZES
+h1 {
+  font-size: 80px;
+  display: flex;
+  justify-content: center;
+}
+
+h2 {
+  font-size: 60px;
+}
+
+h3 {
+  font-size: 50px;
+}
+
+h4 {
+  font-size: 20px;
+  color: #004445;
+}
+
+h5 {
+  font-family: 'Athiti', sans-serif;
+  font-size: 15px;
 }
 
 p {
@@ -28,7 +43,47 @@ a {
   font-size: 25px;
   text-decoration-style: none;
   color: #004445;
-  // color: #779fa1;
+}
+
+.dailyAffirm {
+  font-family: 'Athiti', sans-serif;
+  font-size: 20px;
+}
+
+.profileH1 {
+  font-size: 3em;
+}
+
+.postLink {
+  font-size: 15px;
+}
+
+//INDEX PAGE
+
+#map {
+  border-radius: 15px;
+  margin: 0 auto;
+  width: 70%;
+  height: 300px;
+  align-content: center;
+}
+
+.mainContainer {
+  margin-top: 3em;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.entryContainer {
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  text-align: center;
 }
 
 .shortBtn {
@@ -50,19 +105,12 @@ a {
 }
 
 form {
+  font-size: 20px;
   display: flex;
   flex-wrap: nowrap;
   justify-content: center;
   flex-direction: column;
   margin: 0 auto;
-}
-
-form {
-  font-size: 20px;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
 }
 
 //profile page
@@ -71,41 +119,18 @@ form {
   justify-content: center;
 }
 
-//INDEX
-h1 {
-  font-size: 80px;
-  display: flex;
-  justify-content: center;
-}
-
-// .map-container {
-//   text-align: center;
-// }
-
-.profileH1 {
-  font-size: 3em;
-}
-
-.mainContainer {
-  // -webkit-box-shadow: 14px 17px 3px -2px rgba(154, 163, 158, 1);
-  // -moz-box-shadow: 14px 17px 3px -2px rgba(154, 163, 158, 1);
-  // box-shadow: 14px 17px 3px -2px rgba(154, 163, 158, 1);
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  flex-wrap: wrap;
-  text-align: center;
-  // background: #f9f9f9;
-}
-
-.entryContainer {
-  padding: 40px;
-}
-
 .profileImg {
   width: 2em;
   padding-bottom: 1em;
   margin: 0 auto;
+}
+
+textarea {
+  font-family: 'Athiti', sans-serif;
+  color: black;
+  font-size: 20px;
+  font-style: italic;
+  border: 1px solid #779fa1;
 }
 
 input {
@@ -122,10 +147,17 @@ input {
   // width: 400px;
 }
 
-//MAP
+.transparent {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+}
 
-//quote
+//SIGN OUT REDIRECTION
+.centerPad {
+  padding: 50 auto;
+}
 
+//QUOTE
 .contain {
   position: absolute;
   height: 100%;
@@ -165,4 +197,3 @@ input {
 .navbarContainer {
   margin-top: 10px;
 }
-//BUTTON

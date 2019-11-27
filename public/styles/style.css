@@ -8,11 +8,24 @@ body {
   -o-background-size: cover;
   background-size: cover; }
 
-#map {
-  margin: 0 auto;
-  width: 70%;
-  height: 300px;
-  align-content: center; }
+h1 {
+  font-size: 80px;
+  display: flex;
+  justify-content: center; }
+
+h2 {
+  font-size: 60px; }
+
+h3 {
+  font-size: 50px; }
+
+h4 {
+  font-size: 20px;
+  color: #004445; }
+
+h5 {
+  font-family: 'Athiti', sans-serif;
+  font-size: 15px; }
 
 p {
   font-family: 'Athiti', sans-serif; }
@@ -22,6 +35,39 @@ a {
   font-size: 25px;
   text-decoration-style: none;
   color: #004445; }
+
+.dailyAffirm {
+  font-family: 'Athiti', sans-serif;
+  font-size: 20px; }
+
+.profileH1 {
+  font-size: 3em; }
+
+.postLink {
+  font-size: 15px; }
+
+#map {
+  border-radius: 15px;
+  margin: 0 auto;
+  width: 70%;
+  height: 300px;
+  align-content: center; }
+
+.mainContainer {
+  margin-top: 3em;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  text-align: center; }
+
+.entryContainer {
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  text-align: center; }
 
 .shortBtn {
   font-family: 'Athiti', sans-serif;
@@ -39,45 +85,28 @@ a {
   border-bottom: 5px solid #a59795; }
 
 form {
+  font-size: 20px;
   display: flex;
   flex-wrap: nowrap;
   justify-content: center;
   flex-direction: column;
   margin: 0 auto; }
 
-form {
-  font-size: 20px;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  flex-direction: column; }
-
 .single-post {
   display: flex;
   justify-content: center; }
-
-h1 {
-  font-size: 80px;
-  display: flex;
-  justify-content: center; }
-
-.profileH1 {
-  font-size: 3em; }
-
-.mainContainer {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  flex-wrap: wrap;
-  text-align: center; }
-
-.entryContainer {
-  padding: 40px; }
 
 .profileImg {
   width: 2em;
   padding-bottom: 1em;
   margin: 0 auto; }
+
+textarea {
+  font-family: 'Athiti', sans-serif;
+  color: black;
+  font-size: 20px;
+  font-style: italic;
+  border: 1px solid #779fa1; }
 
 input {
   background: transparent;
@@ -90,6 +119,13 @@ input {
   border: none;
   border-bottom: 2px solid #779fa1;
   text-align: center; }
+
+.transparent {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px; }
+
+.centerPad {
+  padding: 50 auto; }
 
 .contain {
   position: absolute;

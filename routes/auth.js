@@ -10,7 +10,7 @@ const express = require('express');
 const router = new Router();
 const uploader = require('../middleware/upload.js');
 
-//---------------MAP
+// ---------------MAP
 router.get('/', (req, res, next) => {
   //find random post
   Post.count().exec(function (err, count) {
@@ -24,7 +24,6 @@ router.get('/', (req, res, next) => {
       })
   })  
 });
-
 
 //----------------------------
 

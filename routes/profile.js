@@ -19,7 +19,9 @@ router.get('/:userId', (req, res, next) => {
   User.findById(userId)
     .then(document => {
       user = document;
-      return Post.find({ author: userId }).populate('author');
+      return Post.find({ author: userId })
+      .sort({ createdAt: -1 })
+      .populate('author');
     })
     .then(posts => {
       res.render('profile', { user, posts });

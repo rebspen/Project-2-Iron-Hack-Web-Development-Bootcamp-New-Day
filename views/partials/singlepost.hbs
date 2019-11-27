@@ -1,10 +1,17 @@
 <div class="single-post">
-  <div class="card" style="width: 50rem;">
-  <div class="card-body">
-    <p class="card-text"><em>Daily Affirmation: I am.... {{this.affirmation}}</em></p>
-    <small class="card-title">{{ this.createdAt }}</small>
-    <a href="/post/{{ this._id }}" class="card-link">View Journal Entry</a>
-    <a href="/post/{{ this._id }}/edit" class="card-link">Add Evening Entry</a>
+
+  <div class="transparent" style="width: 50rem;">
+  <div class="transparent">
+
+    <p class="card-text dailyAffirm">
+      
+      <em>Daily Affirmation: <br> I am... {{this.affirmation}}</em>
+      </p>
+    <a class="postLink" href="/post/{{ this._id }}" class="card-link">View Full Journal Entry</a>
+    <br>
+    <a class="postLink" href="/post/{{ this._id }}/edit" class="card-link">Add Evening Entry <img src="/images/crescent-moon.png" width="15px" alt=""></a>
+    <br>
+    <small class="card-title">{{ this.createdAt }}</small>  
   </div>
 </div>
 </div>

@@ -1,12 +1,18 @@
+<div>
 {{>nav}}
+
+<div class="entryContainer">
 
 
 {{#with post}}
-
     {{> fullview}}
-  
 {{/with}}
-{{post.author._id}}
+
 <form action="/post/{{post.author._id}}/{{post._id}}/delete" method="POST">
-  <button class="btn">Delete</button>
+  <button class="shortBtn">Delete</button>
 </form>
+
+
+</div>
+</div>
+
