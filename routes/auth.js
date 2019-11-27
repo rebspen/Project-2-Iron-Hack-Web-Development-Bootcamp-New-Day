@@ -25,6 +25,20 @@ router.get('/', (req, res, next) => {
   })  
 });
 
+// router.get("/", (req,res,next) =>{
+//  User.find({}, function(err, users) {
+//       var userMap = [];
+//       users.forEach(function(user) {
+//         console.log(user.location)
+//         userMap += user.location
+//         userMap += ",";
+//       })
+//       console.log(userMap);
+//       res.render("index", {userMap}); 
+//     });
+// });
+
+
 //----------------------------
 
 //Sign In

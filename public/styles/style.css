@@ -8,6 +8,7 @@ body {
   -o-background-size: cover;
   background-size: cover; }
 
+<<<<<<< HEAD
 h1 {
   font-size: 80px;
   display: flex;
@@ -26,6 +27,17 @@ h4 {
 h5 {
   font-family: 'Athiti', sans-serif;
   font-size: 15px; }
+=======
+#map {
+  margin: 0 auto;
+  width: 70%;
+  height: 300px;
+  align-content: center;
+  padding: 10px; }
+
+.signup {
+  margin-bottom: 5%; }
+>>>>>>> cc4943bcfa1b30b4c32221e563d45a5a1c291899
 
 p {
   font-family: 'Athiti', sans-serif; }
@@ -159,5 +171,10 @@ input {
 
 .navbarContainer {
   margin-top: 10px; }
+
+.affirm {
+  z-index: 1000;
+  margin-bottom: -80px;
+  padding: 0 20%; }
 
 /*# sourceMappingURL=style.css.map */
