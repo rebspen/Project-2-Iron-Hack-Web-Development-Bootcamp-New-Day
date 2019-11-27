@@ -3,19 +3,18 @@
 {{> nav}}
 </div>
 
-<div class="entryContainer">
+<div class="entryContainer pb-0">
 
 
 {{#with post}}
     {{> fullview}}
 {{/with}}
-{{post.author._id}}
-{{post._id}}
 
 </div>
  <form action="/post/delete/{{post.author._id}}/{{post._id}}" method="POST">
-  <button type="submit" class="shortBtn">Delete</button>
+  <button type="submit" class="shortBtn mb-3 mt-auto">Delete</button>
 </form>
+
 {{!-- 
 <form action="/" method="POST">
   <button type="submit" class="shortBtn">Delete</button>

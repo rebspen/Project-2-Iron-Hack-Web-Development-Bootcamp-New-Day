@@ -5,11 +5,11 @@
 
     <p class="card-text dailyAffirm">
       
-      <em>Daily Affirmation: <br> I am... {{this.affirmation}}</em>
+      <em>Daily Affirmation: <br> {{this.affirmation}}</em>
       </p>
-    <a class="postLink" href="/post/{{ this._id }}" class="card-link">View Full Journal Entry</a>
+    <a class="postLink" href="/post/{{ this._id }}" class="card-link">View full entry</a>
     <br>
-    <a class="postLink" href="/post/{{ this._id }}/edit" class="card-link">Add Evening Entry <img src="/images/crescent-moon.png" width="15px" alt=""></a>
+    <a class="postLink" href="/post/{{ this._id }}/edit" class="card-link">Complete evening entry <img src="/images/crescent-moon.png" width="15px" alt=""></a>
     <br>
     <small class="card-title">{{ this.createdAt }}</small>  
   </div>

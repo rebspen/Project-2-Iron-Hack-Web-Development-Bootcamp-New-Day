@@ -14,12 +14,6 @@ body {
 //FONT SIZES
 h1 {
   margin: 0 auto;
-  width: 7em;
-  display: inline-block;
-  border-top: 1px solid black;
-  padding-top: 0px;
-  border-bottom: 1px solid black;
-  padding-bottom: 10px;
   font-size: 80px;
 }
 
@@ -65,9 +59,8 @@ h5 {
   padding: 10px;
 }
 
-.signup{
+.signup {
   margin-bottom: 2%;
-
 }
 
 p {
@@ -75,6 +68,13 @@ p {
 }
 
 a {
+  font-family: 'Athiti', sans-serif;
+  font-size: 25px;
+  text-decoration-style: none;
+  color: #004445;
+}
+
+.signOut {
   font-family: 'Athiti', sans-serif;
   font-size: 25px;
   text-decoration-style: none;
@@ -115,6 +115,15 @@ a {
   text-align: center;
 }
 
+.profileContainer {
+  padding: 30px;
+  // display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
 .shortBtn {
   font-family: 'Athiti', sans-serif;
   font-size: 25px;
@@ -123,10 +132,6 @@ a {
   border: none;
   text-align: center;
   background: transparent;
-}
-
-.navBtn {
-  border: none;
 }
 
 .tagline {
@@ -150,7 +155,6 @@ form {
 
 .profileImg {
   width: 2em;
-  padding-bottom: 1em;
   margin: 0 auto;
 }
 
@@ -193,6 +197,7 @@ input {
   left: 0px;
   top: 0px;
   margin: none;
+  width:100%;
   // color: aliceblue;
 }
 
@@ -237,4 +242,14 @@ input {
   z-index: 1000;
   margin-bottom: -80px;
   padding: 0 20%;
+}
+
+.hidden{
+  visibility: hidden;
+}
+
+//I have hidden a box with location so this pulls something over it
+
+.climb{
+  margin-top: -40px;
 }
