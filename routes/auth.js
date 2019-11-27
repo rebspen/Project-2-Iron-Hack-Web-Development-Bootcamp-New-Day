@@ -11,18 +11,31 @@ const router = new Router();
 const uploader = require('../middleware/upload.js');
 
 //---------------MAP
-router.get('/', (req, res, next) => {
-  //find random post
-  Post.count().exec(function (err, count) {
-    // Get a random entry
-    const random = Math.floor(Math.random() * count)
-    // Again query all users but only fetch one offset by our random #
-    Post.findOne().skip(random).exec(
-      function (err, result) {
-        console.log("result", result,result._id) 
-        res.render("index", {result})
+// router.get('/', (req, res, next) => {
+//   //find random post
+//   Post.count().exec(function (err, count) {
+//     // Get a random entry
+//     const random = Math.floor(Math.random() * count)
+//     // Again query all users but only fetch one offset by our random #
+//     Post.findOne().skip(random).exec(
+//       function (err, result) {
+//         console.log("result", result,result._id) 
+//         res.render("index", {result})
+//       })
+//   })  
+// });
+
+router.get("/", (req,res,next) =>{
+ User.find({}, function(err, users) {
+      var userMap = [];
+      users.forEach(function(user) {
+        console.log(user.location)
+        userMap += user.location
+        userMap += ", ";
       })
-  })  
+      console.log(userMap);
+      res.render("index", {userMap}); 
+    });
 });
 
 

@@ -10,34 +10,71 @@
 <br> --}}
 
   <a href="/sign-in">Sign In</a>
-  <a href="/sign-up">Sign Up</a>
+  <a class = "signup" href="/sign-up">Sign Up</a>
   <br>
 
-<div><p> Green Panda - {{result.affirmation}} {{result.location}}</p></div>
-
-<h2>---MAP HOLDER---</h2>
-
+<div class = "affirm" ><p>Community affirmation - "{{userMap}}"</p></div>
 <div id="map"></div>
 
 </div>
 
 <script>
- function initMap () {
+ let geocoder;
+ let city = ["United Kingdom","japan"]
+
+function initialize() 
+{
+  geocoder = new google.maps.Geocoder();
+  var latlng = new google.maps.LatLng(53.3496, -6.3263);
+  var mapOptions = 
+  {
+    zoom: 2,
+    center: latlng
+  }
+  map = new google.maps.Map(document.getElementById('map'), mapOptions);
+  for (let i=0; i<city.length; i++){
+      codeAddress(city[i]);
+  }
+  
+}
+
+function codeAddress(address) 
+{
+  geocoder.geocode( {address:address}, function(results, status) 
+  {
+    if (status == google.maps.GeocoderStatus.OK) 
+    {
+      {{!-- map.setCenter(53.3496, -6.3263);//center the map over the result --}}
+      //place a marker at the location
+      var marker = new google.maps.Marker(
+      {
+          map: map,
+          position: results[0].geometry.location
+      });
+    } else {
+      alert('Geocode was not successful for the following reason: ' + status);
+   }
+  });
+}
+ {{!-- function initMap () {
+   const myLatLng = {lat: -25.363, lng: 131.044};
    const $mapContainer = document.getElementById('map');
     const map = new window.google.maps.Map($mapContainer, {
-      center: { lat: 38.7, lng: -9.14 },
-      zoom: 3,
-   styles: 
+      center: myLatLng,
+      zoom: 2,
+      disableDefaultUI: true,
+      scrollwheel: false, --}}
+   {{!-- styles: 
    [
     {
         "featureType": "water",
         "elementType": "geometry",
         "stylers": [
             {
-                "color": "#e9e9e9"
+                "color": "#97b1a6"
             },
             {
-                "lightness": 17
+                "lightness": 45
             }
         ]
     },
@@ -132,7 +169,7 @@
         "elementType": "labels.text.stroke",
         "stylers": [
             {
-                "visibility": "on"
+                "visibility": "off"
             },
             {
                 "color": "#ffffff"
@@ -145,6 +182,9 @@
     {
         "elementType": "labels.text.fill",
         "stylers": [
+         {
+                "visibility": "off"
+            },
             {
                 "saturation": 36
             },
@@ -203,6 +243,13 @@
             }
         ]
     }
-]});
-  }
+]}); --}}
+
+{{!-- const marker = new google.maps.Marker({
+    position: myLatLng,
+    map: map,
+    title: 'Hello World!'
+  });
+
+} --}}
 </script>
