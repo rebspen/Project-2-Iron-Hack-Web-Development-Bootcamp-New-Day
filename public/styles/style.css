@@ -1,7 +1,6 @@
 body {
-  margin: 0;
+  margin: auto;
   color: #3a3940;
-  padding: 30px;
   font-family: 'Poiret One', sans-serif;
   background: url("/images/bg32.png") no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -66,8 +65,13 @@ h1 {
   flex-wrap: wrap;
   text-align: center; }
 
+.entryContainer {
+  padding: 40px; }
+
 .profileImg {
-  width: 2em; }
+  width: 2em;
+  padding-bottom: 1em;
+  margin: 0 auto; }
 
 input {
   background: transparent;
@@ -110,5 +114,8 @@ input {
 
 .quote-auth {
   font-family: 'Oswald', sans-serif; }
+
+.navbarContainer {
+  margin-top: 10px; }
 
 /*# sourceMappingURL=style.css.map */
