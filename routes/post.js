@@ -8,7 +8,6 @@ const Quote = require('inspirational-quotes');
 const unsplash = require('../middleware/unsplash.js');
 
 router.get('/create', (req, res, next) => {
-  console.log("YOOOOOOOO", req.session.user)
   res.render('post/create');
 });
 

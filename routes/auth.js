@@ -176,4 +176,11 @@ router.post('/auth/sign-up', uploader.single('profile'), (req, res, next) => {
   res.redirect('/');
 });
 
+//auto signout after quote
+
+router.get('/auto-signout', (req, res, next) => {
+  req.session.destroy();
+  res.render('auth/auto-signout');
+});
+
   module.exports = router;
