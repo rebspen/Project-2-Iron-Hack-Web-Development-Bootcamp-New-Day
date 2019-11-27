@@ -6,7 +6,8 @@ body {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover; }
+  background-size: cover;
+  object-fit: cover; }
 
 h1 {
   margin: 0 auto;
@@ -80,7 +81,8 @@ a {
   justify-content: center;
   flex-direction: column;
   flex-wrap: wrap;
-  text-align: center; }
+  text-align: center;
+  width: 100%; }
 
 .entryContainer {
   padding: 30px;

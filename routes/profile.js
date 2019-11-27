@@ -9,6 +9,7 @@ const uploader = require('../middleware/upload.js');
 
 
 // ---------------MAP
+
 router.get('/', (req, res, next) => {
   //find random post
   Post.count().exec(function (err, count) {
@@ -22,7 +23,10 @@ router.get('/', (req, res, next) => {
       })
   })  
 });
-
+// router.get('/', (req, res, next) => {
+//   const userId = req.session.user;
+//   res.render(`index`);
+// });
 
 
 router.get('/profile', routeGuard, (req, res, next) => {
