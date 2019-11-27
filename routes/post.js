@@ -6,9 +6,18 @@ const Post = require('./../models/post');
 const routeGuard = require('./../middleware/route-guard');
 const Quote = require('inspirational-quotes');
 const unsplash = require('../middleware/unsplash.js');
+const User = require('./../models/user');
+
 
 router.get('/create', (req, res, next) => {
-  res.render('post/create');
+  const user = req.session.user;
+  console.log("USERRRRRR" , user);
+  User.findById(user)
+    .populate('author')
+    .then(user => {
+      console.log(user);
+      res.render('post/create', { user });
+    });
 });
 
 // router.get('/quote', routeGuard, (req, res, next) => {
@@ -32,13 +41,15 @@ router.get('/quote', (req, res, next) => {
 });
 
 router.post('/create', (req, res, next) => {
+  let userId = req.session.user;
   Post.create({
     gratitude : req.body.grateful,
     great: req.body.great,
     affirmation: req.body.affirmation,
     author : req.session.user,
     today :"",
-    better: ""
+    better: "",
+    location: req.body.location
   })
   .then(
     res.redirect(`/post/quote`)
