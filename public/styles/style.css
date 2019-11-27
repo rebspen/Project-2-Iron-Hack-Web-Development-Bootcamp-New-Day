@@ -8,7 +8,6 @@ body {
   -o-background-size: cover;
   background-size: cover; }
 
-<<<<<<< HEAD
 h1 {
   font-size: 80px;
   display: flex;
@@ -27,7 +26,7 @@ h4 {
 h5 {
   font-family: 'Athiti', sans-serif;
   font-size: 15px; }
-=======
+
 #map {
   margin: 0 auto;
   width: 70%;
@@ -37,7 +36,6 @@ h5 {
 
 .signup {
   margin-bottom: 5%; }
->>>>>>> cc4943bcfa1b30b4c32221e563d45a5a1c291899
 
 p {
   font-family: 'Athiti', sans-serif; }
