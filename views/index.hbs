@@ -13,7 +13,6 @@
   <a href="/sign-up">Sign Up</a>
   <br>
 
-<h2>---MAP HOLDER---</h2>
 
 <div id="map"></div>
 
@@ -23,8 +22,10 @@
  function initMap () {
    const $mapContainer = document.getElementById('map');
     const map = new window.google.maps.Map($mapContainer, {
-      center: { lat: 38.7, lng: -9.14 },
-      zoom: 3,
+      center: { lat: 45.7, lng: -3.14 },
+      zoom: 2,
+      disableDefaultUI: true,
+      scrollwheel: false,
    styles: 
    [
     {
@@ -32,10 +33,10 @@
         "elementType": "geometry",
         "stylers": [
             {
-                "color": "#e9e9e9"
+                "color": "#97b1a6"
             },
             {
-                "lightness": 17
+                "lightness": 45
             }
         ]
     },
@@ -130,7 +131,7 @@
         "elementType": "labels.text.stroke",
         "stylers": [
             {
-                "visibility": "on"
+                "visibility": "off"
             },
             {
                 "color": "#ffffff"
@@ -143,6 +144,9 @@
     {
         "elementType": "labels.text.fill",
         "stylers": [
+         {
+                "visibility": "off"
+            },
             {
                 "saturation": 36
             },
