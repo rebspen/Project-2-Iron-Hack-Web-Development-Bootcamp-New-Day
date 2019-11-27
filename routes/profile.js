@@ -2,12 +2,11 @@
 
 const { Router } = require('express');
 const router = new Router();
-
 const Post = require('./../models/post');
-
 const User = require('./../models/user');
-
 const routeGuard = require('./../middleware/route-guard');
+const uploader = require('../middleware/upload.js');
+
 
 router.get('/profile', (req, res, next) => {
   const userId = req.session.user;
@@ -32,7 +31,7 @@ router.get('/:userId', (req, res, next) => {
 
 
 //EDITING USER INFORMATION 
-
+//general
   router.get('/:userId/edit', (req, res, next) => {
     const userId = req.params.userId;
     User.findById(userId)
@@ -63,23 +62,37 @@ router.get('/:userId', (req, res, next) => {
         next(error);
       });
   });
-  
-  // router.post('/:userId/edit', routeGuard, (req, res, next) => {
-  //   const userId = req.params.userId;
-  //   User.findByIdAndUpdate({_id: userId}, {
-  //     name: req.body.name,
-  //     email: req.body.email,
-  //     location: req.body.location,
-  //     theme: req.body.theme
-  //   })
-  //     .then(result => { 
-  //     console.log(result)
-  //     res.redirect(`/${userId}`)
-  //     })
-  //       .catch(error => {
-  //         next(error);
-  //       });
-  //     });
+
+// picture
+
+router.get('/:userId/edit/pic', (req, res, next) => {
+  const userId = req.params.userId;
+  User.findById(userId)
+  .then(user => {
+    res.render('profile-edit-pic', { user });
+  })
+  .catch(error => {
+    next(error);
+  });
+});
+
+router.post('/:userId/edit/pic', uploader.single('profile'), (req, res, next) => {
+  const userId = req.params.userId;
+  User.findByIdAndUpdate(
+       userId
+    ,
+    {
+      imgPath: req.file.originalname,
+      imgName: req.file.url
+    }
+  )
+    .then(data => {
+      res.redirect(`/${userId}`);
+    })
+    .catch(error => {
+      next(error);
+    });
+});
     
 
 module.exports = router;

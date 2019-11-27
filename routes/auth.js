@@ -4,38 +4,36 @@
 const User = require('./../models/user');
 const bcryptjs = require('bcryptjs');
 const nodemailer = require('nodemailer');
-
+const Post = require('./../models/post');
 const { Router } = require('express');
 const express = require('express');
 const router = new Router();
 const uploader = require('../middleware/upload.js');
 
-
-//-----
-const fetch = require('node-fetch');
-global.fetch = fetch;
-
-const Unsplash = require('unsplash-js').default;
-
-const unsplash = new Unsplash({ accessKey: process.env.APP_ACCESS_KEY});
-
-router.get('/unsplash', (req, res, next) => {
-  unsplash.photos.getRandomPhoto()
-  .then(data => {
-    data.json().then(
-      response=>{
-        console.log("URL", response.urls);
-        res.render('unsplash', {response});
-      }
-    )
-  });
-});
-
-//--------
-
+//---------------MAP
 router.get('/', (req, res, next) => {
-  res.render('index');
+  //find random post
+  Post.count().exec(function (err, count) {
+    // Get a random entry
+    const random = Math.floor(Math.random() * count)
+    // Again query all users but only fetch one offset by our random #
+    Post.findOne().skip(random).exec(
+      function (err, result) {
+        console.log("result", result,result._id) 
+        res.render("index", {result})
+      })
+  })  
 });
+
+
+
+
+
+
+
+
+
+//----------------------------
 
 //Sign In
 router.get('/sign-in', (req, res, next) => {

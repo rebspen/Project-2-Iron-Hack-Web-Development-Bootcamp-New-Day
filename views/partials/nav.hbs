@@ -1,44 +1,10 @@
-{{!-- 
-<nav class="navbar navbar-expand-xl navbar-light bg-light">
-  <a class="navbar-brand" href="/{{user._id}}">
-  <img width = "20px" src = "/images/sun.png"></a>
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarNavDropdown">
-
-    <ul class="navbar-nav">
-
-      <li><a href="/{{user._id}}" class="nav-link">Profile</a></li>
-
-      <li class="nav-item active">
-       <li><a href="/{{user._id}}/edit" class="card-link">Edit Profile</a> <br> </li> 
-        <li><a href="/post/create">Write Journal</a></li>
-        <li><form action="/sign-out" method="POST">
-           <button class="shortBtn">Sign Out</button> </form></li>
-    </ul>
-  </div>
-</nav>
-
-{{!-- <span class="sr-only">(current)</span> --}}
-
-{{!-- <a class="nav-link" href="/{{user._id}}">Profile<span class="sr-only">(current)</span></a>
-
-<li class="nav-item"> <br>
-        <a href="/post/create">Create</a>
-      </li>
-
-      <form action="/sign-out" method="POST">
-           <button class="shortBtn">Sign Out</button> --}}
-  
 <nav class="navbar navbar-expand-xl navbar-light bg-light navColor">
   {{!-- <a class="navbar-brand" href="/{{user._id}}"> --}}
   {{!-- <img width = "20px" src = "/images/sun.png"></a> --}}
-   <div class="mx-auto order-0">
+   {{!-- <div class="mx-auto order-0"> --}}
         <img width = "20px" src = "/images/sun.png"></a>
-    </div>
+    {{!-- </div> --}}
     <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
@@ -50,13 +16,13 @@
         </ul>
     </div>
   
-    <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+    <div class="navbar-collapse collapse w-100 dual-collapse2">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
                 <a class="nav-link" href="/{{user._id}}/edit">Edit Profile</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/{{user._id}}/edit">Edit Profile</a>
+                <a class="nav-link" href="/{{user._id}}/edit/pic">Edit Profile Pic</a>
             </li>
              <li class="nav-item">
               <form action="/sign-out" method="POST">
