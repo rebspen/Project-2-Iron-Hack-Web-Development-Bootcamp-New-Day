@@ -125,4 +125,7 @@ input {
 .navbarContainer {
   margin-top: 10px; }
 
+#location {
+  visibility: hidden; }
+
 /*# sourceMappingURL=style.css.map */
