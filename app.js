@@ -54,7 +54,7 @@ app.use(
       maxAge: 60 * 60 * 24 * 15,
       // We should set this for security
       // cookie.sameSite prevents CSRF attacks
-      sameSite: true,
+      sameSite: "lax",
       // cookie.httpOnly means the cookie is not readable by JavaScript
       httpOnly: true,
       // We're setting cookie.secure to true on non-development environments only
