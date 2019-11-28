@@ -136,7 +136,7 @@ router.post('/sign-up', uploader.single('profile'), (req, res, next) => {
       <style></style>
       <div style="background-colour: yellow"> 
       <h1 style="color:  #779FA1; font-size: 50px; text-align: center">Welcome To The New Day App</h1>    
-      <h2 style="color: #5C7457; font-size: 40px; text-align: center"><strong>Please verify your email by clicking <a href="http://localhost:3000/confirm/${token}">here</a></h2
+      <h2 style="color: #5C7457; font-size: 40px; text-align: center"><strong>Please verify your email by clicking <a href="https://new-day-journal.herokuapp.com/auth/confirm/${token}">here</a></h2
       </div>
       `
     }))
