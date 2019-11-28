@@ -197,11 +197,12 @@ input {
 .quote-auth {
   font-family: 'Oswald', sans-serif; }
 
-.navbarContainer {
-  margin-top: 10px; }
+.nav-img {
+  width: 25px;
+  margin: 5px; }
 
 .affirm {
-  font-family: 'Poiret One', sans-serif;
+  font-family: 'Oswald', sans-serif;
   font-size: 20px;
   z-index: 1000;
   margin-bottom: -100px;
