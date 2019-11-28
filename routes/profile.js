@@ -10,18 +10,22 @@ const uploader = require('../middleware/upload.js');
 
 // ---------------MAP
 
+router.get('/', (req, res, next) => {
+  //find random post
+  Post.count().exec(function (err, count) {
+    // Get a random entry
+    const random = Math.floor(Math.random() * count)
+    // Again query all users but only fetch one offset by our random #
+    Post.findOne().skip(random).exec(
+      function (err, result) {
+        console.log("result", result,result._id) 
+        res.render("index", {result})
+      })
+  })  
+});
+
 // router.get('/', (req, res, next) => {
-//   //find random post
-//   Post.count().exec(function (err, count) {
-//     // Get a random entry
-//     const random = Math.floor(Math.random() * count)
-//     // Again query all users but only fetch one offset by our random #
-//     Post.findOne().skip(random).exec(
-//       function (err, result) {
-//         console.log("result", result,result._id) 
-//         res.render("index", {result})
-//       })
-//   })  
+//   res.render(`index`);
 // });
 
 router.get('/', (req, res, next) => {
@@ -40,7 +44,7 @@ router.get('/profile', routeGuard, (req, res, next) => {
   res.redirect(`/${userId}`);
 });
 
-router.get('/:userId', routeGuard, (req, res, next) => {
+router.get('/:userId',routeGuard, (req, res, next) => {
   const userId = req.params.userId;
   let user;
   User.findById(userId)
@@ -61,7 +65,7 @@ router.get('/:userId', routeGuard, (req, res, next) => {
 
 //EDITING USER INFORMATION 
 //general
-  router.get('/:userId/edit', routeGuard, (req, res, next) => {
+  router.get('/:userId/edit',routeGuard, (req, res, next) => {
     const userId = req.params.userId;
     User.findById(userId)
     .then(user => {
@@ -72,7 +76,7 @@ router.get('/:userId', routeGuard, (req, res, next) => {
     });
   });
 
-  router.post('/:userId/edit', routeGuard, (req, res, next) => {
+  router.post('/:userId/edit', (req, res, next) => {
     const userId = req.params.userId;
     User.findByIdAndUpdate(
          userId
@@ -94,7 +98,7 @@ router.get('/:userId', routeGuard, (req, res, next) => {
 
 // picture
 
-router.get('/:userId/edit/pic', routeGuard, (req, res, next) => {
+router.get('/:userId/edit/pic',routeGuard, (req, res, next) => {
   const userId = req.params.userId;
   User.findById(userId)
   .then(user => {
@@ -105,7 +109,7 @@ router.get('/:userId/edit/pic', routeGuard, (req, res, next) => {
   });
 });
 
-router.post('/:userId/edit/pic', routeGuard, uploader.single('profile'), (req, res, next) => {
+router.post('/:userId/edit/pic',routeGuard, uploader.single('profile'), (req, res, next) => {
   const userId = req.params.userId;
   User.findByIdAndUpdate(
        userId

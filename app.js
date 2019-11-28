@@ -56,10 +56,10 @@ app.use(
       // cookie.sameSite prevents CSRF attacks
       sameSite: "lax",
       // cookie.httpOnly means the cookie is not readable by JavaScript
-      httpOnly: true,
+      httpOnly: true
       // We're setting cookie.secure to true on non-development environments only
       // since in dev mode we're loading localhost throught http
-      secure: process.env.NODE_ENV !== 'development'
+      // secure: process.env.NODE_ENV !== 'development'
       // secure: true
     },
     // Mongo store is going to save the value of req.session in a database record

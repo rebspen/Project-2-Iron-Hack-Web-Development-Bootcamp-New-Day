@@ -8,7 +8,6 @@ body {
   -o-background-size: cover;
   background-size: cover;
   object-fit: cover;
-
 }
 
 //FONT SIZES
@@ -29,7 +28,7 @@ h1 {
 
 .signH2 {
   font-family: 'Poiret One', sans-serif;
-  font-size: 80px;
+  font-size: 60px;
 }
 
 h2 {
@@ -172,7 +171,8 @@ form {
 }
 
 .profileImg {
-  width: 2em;
+  width: 20%;
+  border-radius: 50%;
   margin: 0 auto;
 }
 
@@ -183,6 +183,7 @@ textarea {
   font-style: italic;
   width: 350px;
   border: 1px solid #779fa1;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 input {
@@ -197,6 +198,10 @@ input {
   border-bottom: 2px solid #779fa1;
   text-align: center;
   // width: 400px;
+}
+
+label {
+  font-family: 'Athiti', sans-serif;
 }
 
 .transparent {
@@ -216,7 +221,7 @@ input {
   left: 0px;
   top: 0px;
   margin: none;
-  width:100%;
+  width: 100%;
   // color: aliceblue;
 }
 
@@ -247,7 +252,7 @@ input {
   font-family: 'Oswald', sans-serif;
 }
 
-.nav-img{
+.nav-img {
   width: 25px;
   margin: 5px;
 }
@@ -265,7 +270,7 @@ input {
 //   padding: 0 20%;
 // }
 
-.hidden{
+.hidden {
   visibility: hidden;
 }
 
@@ -275,6 +280,6 @@ input {
 
 //I have hidden a box with location so this pulls something over it
 
-.climb{
+.climb {
   margin-top: -40px;
 }

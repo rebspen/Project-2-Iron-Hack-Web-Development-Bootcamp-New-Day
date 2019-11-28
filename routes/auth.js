@@ -124,19 +124,19 @@ router.post('/sign-up', uploader.single('profile'), (req, res, next) => {
     // so that it can later be loaded from the database and
     // bound to the request with req.body (deserialization)
     req.session.user = user._id;
-    res.redirect('/verified');
+    res.redirect('/auth/verified');
   }) .then(
     transporter.sendMail({
       from: `New Day App<${process.env.EMAIL}>`,
       to: req.body.email,
       subject: 'Nice to meet you! Please verify your email to use the New Day app',
-      //text: `http://localhost:3000/auth/confirm/${token}`,
+      //text: `https://new-day-journal.herokuapp.com/auth/confirm/${token}`,
       
       html: `
       <style></style>
       <div style="background-colour: yellow"> 
       <h1 style="color:  #779FA1; font-size: 50px; text-align: center">Welcome To The New Day App</h1>    
-      <h2 style="color: #5C7457; font-size: 40px; text-align: center"><strong>Please verify your email by clicking <a href="http://localhost:3000/confirm/${token}">here</a></h2
+      <h2 style="color: #5C7457; font-size: 40px; text-align: center"><strong>Please verify your email by clicking <a href="https://new-day-journal.herokuapp.com/auth/confirm/${token}">here</a></h2
       </div>
       `
     }))

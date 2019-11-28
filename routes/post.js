@@ -72,7 +72,7 @@ router.post('/create',routeGuard, (req, res, next) => {
     });
   });
   
-  router.get('/:postId/edit', routeGuard, (req, res, next) => {
+  router.get('/:postId/edit',routeGuard, (req, res, next) => {
     const postId = req.params.postId;
     Post.findById(postId)
     .then(post => {
@@ -102,7 +102,7 @@ router.post('/create',routeGuard, (req, res, next) => {
         });
       });
     
-    router.post('/delete/:authId/:postId', routeGuard, (req, res, next) => {
+    router.post('/delete/:authId/:postId', (req, res, next) => {
       console.log("DELEEETE POST REACHED");
       const postId = req.params.postId;
       const userId = req.params.authId;
