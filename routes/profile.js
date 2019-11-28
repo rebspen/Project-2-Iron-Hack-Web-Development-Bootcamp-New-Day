@@ -28,6 +28,11 @@ router.get('/', (req, res, next) => {
 //   res.render(`index`);
 // });
 
+router.get('/', (req, res, next) => {
+  // const userId = req.session.user;
+  res.render(`index`);
+});
+
 
 router.get('/about', (req, res, next) => {
   res.render(`about`);
