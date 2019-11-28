@@ -60,7 +60,7 @@ router.get('/:userId',routeGuard, (req, res, next) => {
 
 //EDITING USER INFORMATION 
 //general
-  router.get('/:userId/edit', (req, res, next) => {
+  router.get('/:userId/edit',routeGuard, (req, res, next) => {
     const userId = req.params.userId;
     User.findById(userId)
     .then(user => {
@@ -93,7 +93,7 @@ router.get('/:userId',routeGuard, (req, res, next) => {
 
 // picture
 
-router.get('/:userId/edit/pic', (req, res, next) => {
+router.get('/:userId/edit/pic',routeGuard, (req, res, next) => {
   const userId = req.params.userId;
   User.findById(userId)
   .then(user => {
@@ -104,7 +104,7 @@ router.get('/:userId/edit/pic', (req, res, next) => {
   });
 });
 
-router.post('/:userId/edit/pic', uploader.single('profile'), (req, res, next) => {
+router.post('/:userId/edit/pic',routeGuard, uploader.single('profile'), (req, res, next) => {
   const userId = req.params.userId;
   User.findByIdAndUpdate(
        userId

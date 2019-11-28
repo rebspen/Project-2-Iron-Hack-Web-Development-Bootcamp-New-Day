@@ -59,7 +59,7 @@ router.post('/create',routeGuard, (req, res, next) => {
     });
   });
   
-  router.get('/:postId', (req, res, next) => {
+  router.get('/:postId',routeGuard, (req, res, next) => {
     const postId = req.params.postId;
     Post.findById(postId)
     .populate('author')
@@ -72,7 +72,7 @@ router.post('/create',routeGuard, (req, res, next) => {
     });
   });
   
-  router.get('/:postId/edit', (req, res, next) => {
+  router.get('/:postId/edit',routeGuard, (req, res, next) => {
     const postId = req.params.postId;
     Post.findById(postId)
     .then(post => {
@@ -83,7 +83,7 @@ router.post('/create',routeGuard, (req, res, next) => {
     });
   });
   
-  router.post('/:postId/edit', (req, res, next) => {
+  router.post('/:postId/edit',routeGuard, (req, res, next) => {
     const postId = req.params.postId;
     Post.findOneAndUpdate(
       {
