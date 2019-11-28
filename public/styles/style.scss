@@ -151,10 +151,9 @@ a {
   background: transparent;
 }
 
-
-.about-p{
-  margin-left:10%;
-  margin-right:10%;
+.about-p {
+  margin-left: 10%;
+  margin-right: 10%;
 }
 // .tagline {
 //   border-bottom: 5px solid#a59795;
@@ -176,9 +175,25 @@ form {
 }
 
 .profileImg {
-  width: 20%;
-  border-radius: 50%;
+  // width: 20%;
+  // border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  webkit-clip-path: polygon(
+    50% 0%,
+    100% 25%,
+    100% 75%,
+    50% 100%,
+    0% 75%,
+    0% 25%
+  );
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   margin: 0 auto;
+  webkit-background-size: cover;
+  moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background: no-repeat center center;
 }
 
 textarea {
