@@ -1,12 +1,10 @@
 <div>
   {{>nav}}
-<br>
 
   <div class="profileContainer pt-0">
 
     <img class="profileImg" src={{user.imgName}}>
-    <p class="profileH1">Hey, {{user.name}}</p> 
-    <br>
+    <p class="profileH1 mb-0">Hey, {{user.name}}</p> 
     <a href ="post/create">Write Journal</a></button>
     <br> <br>
     {{#each posts}}

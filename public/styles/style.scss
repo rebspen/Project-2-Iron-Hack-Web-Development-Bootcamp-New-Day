@@ -54,7 +54,7 @@ h5 {
   color: black;
   font-size: 20px;
   z-index: 1000;
-  margin-top: -80px;
+  margin-top: -90px;
   // font-style: italic;
 }
 
@@ -65,7 +65,7 @@ span {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
 #map {
@@ -74,7 +74,7 @@ span {
   width: 70%;
   height: 300px;
   align-content: center;
-  padding: 10px;
+  padding: 5px;
 }
 
 .signup {
@@ -256,13 +256,14 @@ input {
 // #locations{
 //   visibility: hidden;
 // }
-.affirm {
-  font-family: 'Oswald', sans-serif;
-  font-size: 20px;
-  z-index: 1000;
-  margin-bottom: -100px;
-  padding: 0 20%;
-}
+
+// .affirm {
+//   font-family: 'Oswald', sans-serif;
+//   font-size: 10px;
+//   z-index: 1000;
+//   margin-bottom: -60px;
+//   padding: 0 20%;
+// }
 
 .hidden{
   visibility: hidden;

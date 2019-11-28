@@ -3,22 +3,19 @@
   <h1>New Day</h1>
 
   <p class = "m-2">The daily 5 minute journal you'll actually stick with...</p>
-
+<a class = "about" href="/about">About</a>
   <a href="auth/sign-in">Sign In</a>
   {{!-- Class given for margin  --}}
-  <a class = "signup mb-5" href="auth/sign-up">Sign Up</a>
-
-  <br>
-
+  <a class = "signup" href="auth/sign-up">Sign Up</a>
 
     <div class="affirm">
 <p> <span>"{{result.affirmation}}"</span></p>
     {{!-- <p class="affirmText2">"{{result.affirmation}}"</p> --}}
-    </div>
 
     {{!-- MAP --}}
     <div id="map"></div>
     {{!-- <p class="affirmText">Affirmation Inspiration: I am..</p> --}}
+    </div>
     <div id = "locations"><p>{{result.location}}</p></div>
 
 </div>

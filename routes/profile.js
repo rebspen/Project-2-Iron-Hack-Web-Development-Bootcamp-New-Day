@@ -29,6 +29,11 @@ router.get('/', (req, res, next) => {
 // });
 
 
+router.get('/about', (req, res, next) => {
+  res.render(`about`);
+});
+
+
 router.get('/profile', routeGuard, (req, res, next) => {
   const userId = req.session.user;
   res.redirect(`/${userId}`);
