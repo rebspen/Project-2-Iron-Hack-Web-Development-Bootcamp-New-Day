@@ -95,6 +95,14 @@ app.use((req, res, next) => {
   }
 });
 
+hbs.registerHelper('date', value => {
+  return value.toLocaleDateString("en-GB", {
+    day: "numeric",
+    month: "short",
+    year: "numeric"
+  });
+});
+
 app.use('/auth', authRouter);
 app.use('/post', postRouter);
 app.use('/', profileRouter);
