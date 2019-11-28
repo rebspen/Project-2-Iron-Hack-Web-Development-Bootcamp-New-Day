@@ -1,11 +1,31 @@
+<nav>
+<ul class="nav m-2">
+  <li class="nav-item">
+    <a class="nav-link" href="/{{user._id}}"><img class ="nav-img" src = "/images/user-thin.png"></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/{{user._id}}/edit"><img class ="nav-img" src ="/images/resume.png"></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/{{user._id}}/edit/pic"><img class ="nav-img" src ="/images/picture.png"></a>
+  </li>
+  <li class="nav-item">
+      <a class="nav-link" href="/auth/auto-signout"><img class ="nav-img" src ="/images/logout-thin.png"></a>
+  </li>
+</ul>
+</nav>
 
+
+
+
+{{!-- 
 <nav class="navbar navbar-expand-xl navbar-light bg-light">
 
   {{!-- <a class="navbar-brand" href="/{{user._id}}">
   <img width = "100px" src = "/images/logo.png">
   </a> --}}
 
-    <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2 nav-small">
+    {{!-- <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2 nav-small">
         
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
@@ -33,4 +53,4 @@
      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
             <span class="navbar-toggler-icon"></span>
         </button>
-</nav>
+</nav> --}}
