@@ -39,7 +39,7 @@ router.get('/profile', routeGuard, (req, res, next) => {
   res.redirect(`/${userId}`);
 });
 
-router.get('/:userId', routeGuard, (req, res, next) => {
+router.get('/:userId', (req, res, next) => {
   const userId = req.params.userId;
   let user;
   User.findById(userId)
