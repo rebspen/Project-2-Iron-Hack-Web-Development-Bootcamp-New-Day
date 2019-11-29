@@ -119,6 +119,9 @@ a {
   font-size: 15px;
 }
 
+.displayLink {
+  display: inline;
+}
 //INDEX PAGE
 
 .mainContainer {
@@ -164,7 +167,7 @@ a {
   margin-right: 10%;
 }
 
-.review{
+.review {
   background-color: rgba(255, 255, 255, 0.5);
   width: 70%;
   margin: 0 auto;
@@ -282,7 +285,7 @@ label {
   font-size: 2em;
   font-family: 'Oswald', sans-serif;
   background-color: #ffffff85;
-  color: #000
+  color: #000;
 }
 
 .quote-auth {
@@ -297,13 +300,12 @@ label {
   margin: 5px;
 }
 
-#locations{
+#locations {
   color: #004445;
   font-size: 1.5em;
   margin-bottom: 1em;
   margin-top: 0.5em;
 }
-
 
 //BUTTON
 //create page hiding location
