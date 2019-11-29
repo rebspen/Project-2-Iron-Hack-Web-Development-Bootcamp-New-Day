@@ -1,8 +1,8 @@
-<div class="transparent">
+<div>
 
 <div class="full-view">
   <h3 class = "mt-2">Today's Journal</h3>
-
+<div class ="day">
   <h4> I Am Grateful For… </h4>
   <h5>{{this.gratitude}}</h5>
 
@@ -15,17 +15,18 @@
 
   <h4> Daily Affirmation</h4>
     <h5>I am…{{this.affirmation}}</h5>
-
-  <br>
-
-  <h4 class="night">What Made Today Great?</h4> 
+</div>
+<br>
+<div class = "night">
+ <h4 class="night">What Made Today Great?</h4> 
   <h5>{{this.today}}</h5> 
 
   <br>
 
   <h4 class="night">What Could Have Made Today Even Better? </h4>
   <h5>{{this.better}}</h5>
-
+</div>
+  
   <br>
   
   <small><p> Created At: {{ date this.createdAt }}</p></small>
