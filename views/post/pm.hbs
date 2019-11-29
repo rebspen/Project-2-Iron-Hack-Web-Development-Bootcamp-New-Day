@@ -1,11 +1,11 @@
 <div class="mainContainer">
 
 <h2>Complete your evening journal</h2>
-<form class = "eve" action="/post/{{ post._id }}/edit" method="POST">
+<form  action="/post/{{ post._id }}/edit" method="POST">
   <label for="today">Amazing things that happened today...</label>
-  <textarea id ="amazing" name="today" maxlength="200" placeholder="Write here..." required></textarea>
+  <textarea class = "eve" id ="amazing" name="today" maxlength="200" placeholder="Write here..." required></textarea>
   <label for="better">How could I have made today even better?</label>
-  <textarea id ="better" name="better" maxlength="200" placeholder="I could have..." required></textarea>
+  <textarea class = "eve" id ="better" name="better" maxlength="200" placeholder="I could have..." required></textarea>
 
   <button class="shortBtn">I'm done</button>
 </form>
