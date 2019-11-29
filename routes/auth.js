@@ -168,7 +168,6 @@ router.post('/sign-up', uploader.single('profile'), (req, res, next) => {
 //auto signout after quote & nav signout
 
 router.get('/auto-signout', (req, res, next) => {
-  req.session.destroy();
   res.render('auth/auto-signout');
 });
 
