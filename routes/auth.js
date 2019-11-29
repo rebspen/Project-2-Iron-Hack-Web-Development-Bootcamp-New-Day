@@ -10,18 +10,18 @@ const express = require('express');
 const router = new Router();
 const uploader = require('../middleware/upload.js');
 
-router.get("/", (req,res,next) =>{
- User.find({}, function(err, users) {
-      var userMap = [];
-      users.forEach(function(user) {
-        console.log(user.location)
-        userMap += user.location
-        userMap += ",";
-      })
-      console.log(userMap);
-      res.render("index", {userMap}); 
-    });
-});
+// router.get("/", (req,res,next) =>{
+//  User.find({}, function(err, users) {
+//       var userMap = [];
+//       users.forEach(function(user) {
+//         console.log(user.location)
+//         userMap += user.location
+//         userMap += ",";
+//       })
+//       console.log(userMap);
+//       res.render("index", {userMap}); 
+//     });
+// });
 
 
 //----------------------------
