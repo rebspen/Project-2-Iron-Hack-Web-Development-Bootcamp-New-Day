@@ -50,7 +50,11 @@ h5 {
 }
 
 .night {
-  color: #191970;
+  color: white;
+}
+
+.dtext{
+  color: #004445;
 }
 
 .affirmText {
@@ -336,11 +340,12 @@ label {
 }
 
 .day{
-background-color: rgba(0, 68, 69, 0.2);
+background-color: rgba(0, 68, 69, 0.1);
 border-radius: 10px;
 }
 
 .eve{
-background-color: rgba(0, 68, 69, 0.2);
+background-color: rgba(0, 68, 69, 0.5);
 border-radius: 10px;
+colour: white
 }
