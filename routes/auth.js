@@ -91,8 +91,8 @@ const transporter = nodemailer.createTransport({
 
 router.post('/sign-up', uploader.single('profile'), (req, res, next) => {
   const { name, email, password, location, theme} = req.body;
-  const imgName = req.file.url;
-  const imgPath = req.file.originalname;
+  // const imgName = req.file.url;
+  // const imgPath = req.file.originalname;
   let token = '';
   const generateId = length => {
     const characters =
@@ -112,8 +112,8 @@ router.post('/sign-up', uploader.single('profile'), (req, res, next) => {
       email,
       passwordHash: hash,
       location,
-      imgPath,
-      imgName,
+      // imgPath,
+      // imgName,
       confirmationCode: token,
       theme
     });
