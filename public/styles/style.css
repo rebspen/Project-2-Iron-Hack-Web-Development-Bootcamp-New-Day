@@ -23,7 +23,7 @@ h1 {
 
 .signH2 {
   font-family: 'Poiret One', sans-serif;
-  font-size: 80px; }
+  font-size: 60px; }
 
 h2 {
   font-size: 60px; }
@@ -37,13 +37,22 @@ h4 {
 
 h5 {
   font-family: 'Athiti', sans-serif;
-  font-size: 15px; }
+  font-size: 25px; }
+
+.night {
+  color: white; }
+
+.dtext {
+  color: #004445; }
 
 .affirmText {
   color: black;
   font-size: 20px;
   z-index: 1000;
   margin-top: -90px; }
+
+.underline {
+  text-decoration-line: underline; }
 
 span {
   font-family: 'Oswald', sans-serif;
@@ -90,6 +99,9 @@ a {
 .postLink {
   font-size: 15px; }
 
+.displayLink {
+  display: inline; }
+
 .mainContainer {
   margin-top: 3em;
   display: flex;
@@ -123,6 +135,16 @@ a {
   text-align: center;
   background: transparent; }
 
+.about-p {
+  margin-left: 10%;
+  margin-right: 10%; }
+
+.review {
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 70%;
+  margin: 0 auto;
+  font-family: 'Athiti', sans-serif; }
+
 form {
   font-size: 20px;
   display: flex;
@@ -136,8 +158,16 @@ form {
   justify-content: center; }
 
 .profileImg {
-  width: 2em;
-  margin: 0 auto; }
+  width: 70px;
+  height: 80px;
+  webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  margin: 0 auto;
+  webkit-background-size: cover;
+  moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background: no-repeat center center; }
 
 textarea {
   font-family: 'Athiti', sans-serif;
@@ -145,7 +175,8 @@ textarea {
   font-size: 20px;
   font-style: italic;
   width: 350px;
-  border: 1px solid #779fa1; }
+  border: 1px solid #779fa1;
+  background-color: rgba(255, 255, 255, 0.5); }
 
 input {
   background: transparent;
@@ -158,6 +189,9 @@ input {
   border: none;
   border-bottom: 2px solid #779fa1;
   text-align: center; }
+
+label {
+  font-family: 'Athiti', sans-serif; }
 
 .transparent {
   background: rgba(255, 255, 255, 0.3);
@@ -192,19 +226,53 @@ input {
 
 .quote-body {
   font-size: 2em;
-  font-family: 'Oswald', sans-serif; }
+  font-family: 'Oswald', sans-serif;
+  background-color: #ffffff85;
+  color: #000; }
 
 .quote-auth {
-  font-family: 'Oswald', sans-serif; }
+  font-family: 'Oswald', sans-serif;
+  background-color: #ffffff85;
+  color: #000;
+  width: 30%; }
 
 .nav-img {
   width: 25px;
   margin: 5px; }
+
+#locations {
+  color: #004445;
+  font-size: 1.5em;
+  margin-bottom: 1em;
+  margin-top: 0.5em; }
 
 .hidden {
   visibility: hidden; }
 
 .climb {
   margin-top: -40px; }
+
+.day {
+  background-color: rgba(0, 68, 69, 0.1);
+  border-radius: 10px; }
+
+.eve {
+  background-color: rgba(0, 68, 69, 0.5);
+  border-radius: 10px;
+  color: white; }
+
+.refresh {
+  text-transform: none;
+  border: none;
+  background: none; }
+
+.refreshimg {
+  width: 1em; }
+
+.refresh-box {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: center; }
 
 /*# sourceMappingURL=style.css.map */

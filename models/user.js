@@ -21,9 +21,14 @@ const schema = new mongoose.Schema({
     required: true,
     trim: true
   },
-
-  imgName: String,
-  imgPath: String,
+  imageName: {
+    type: String,
+    default: "http://res.cloudinary.com/lglg0101/image/upload/v1574959534/new-day/t1jqqrml1mkwdkbxhzst.png"
+  },
+  imgPath: {
+    type:String,
+    Default: "ruby.png"
+  },
   theme :{
     type: String,
     enum : ["forest", "ocean", "space", "pattern", "beach", "none"], 

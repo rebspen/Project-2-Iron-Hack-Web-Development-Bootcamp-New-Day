@@ -91,13 +91,8 @@ const transporter = nodemailer.createTransport({
 
 router.post('/sign-up', uploader.single('profile'), (req, res, next) => {
   const { name, email, password, location, theme} = req.body;
-  if(req.file.url){
-    const imgName = req.file.url;
-    const imgPath = req.file.originalname;
-  } else{
-    const imgName = "http://res.cloudinary.com/lglg0101/image/upload/v1574959534/new-day/t1jqqrml1mkwdkbxhzst.png";
-    const imgPath = "ruby.png";
-  }
+  const imgName = req.file.url;
+  const imgPath = req.file.originalname;
   let token = '';
   const generateId = length => {
     const characters =
@@ -130,7 +125,7 @@ router.post('/sign-up', uploader.single('profile'), (req, res, next) => {
     // bound to the request with req.body (deserialization)
     req.session.user = user._id;
     res.redirect('/auth/verified');
-  }) .then(
+  }).then(
     transporter.sendMail({
       from: `New Day App<${process.env.EMAIL}>`,
       to: req.body.email,
