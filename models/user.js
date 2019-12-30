@@ -21,7 +21,7 @@ const schema = new mongoose.Schema({
     required: true,
     trim: true
   },
-  imageName: {
+  imgName: {
     type: String,
     default: "http://res.cloudinary.com/lglg0101/image/upload/v1574959534/new-day/t1jqqrml1mkwdkbxhzst.png"
   },
