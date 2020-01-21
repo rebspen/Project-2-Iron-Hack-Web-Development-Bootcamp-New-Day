@@ -11,11 +11,9 @@ const User = require('./../models/user');
 
 router.get('/create',routeGuard, (req, res, next) => {
   const user = req.session.user;
-  console.log("USERRRRRR" , user);
   User.findById(user)
     .populate('author')
     .then(user => {
-      console.log(user);
       res.render('post/create', { user });
     });
 });
@@ -64,7 +62,6 @@ router.post('/create',routeGuard, (req, res, next) => {
     Post.findById(postId)
     .populate('author')
     .then(post => {
-      console.log(post);
       res.render('post/single-view', { post });
     })
     .catch(error => {
@@ -103,10 +100,8 @@ router.post('/create',routeGuard, (req, res, next) => {
       });
     
     router.post('/delete/:authId/:postId', (req, res, next) => {
-      console.log("DELEEETE POST REACHED");
       const postId = req.params.postId;
       const userId = req.params.authId;
-      console.log("Delete", userId, postId);
       Post.findOneAndDelete({
         _id: postId
       })

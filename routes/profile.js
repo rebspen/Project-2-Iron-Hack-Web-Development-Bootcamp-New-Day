@@ -18,7 +18,6 @@ router.get('/', (req, res, next) => {
     // Again query all users but only fetch one offset by our random #
     Post.findOne().skip(random).exec(
       function (err, result) {
-        console.log("result", result,result._id) 
         res.render("index", {result})
       })
   })  
